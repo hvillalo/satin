@@ -1,0 +1,28 @@
+Package: satin2
+Type: Package
+Title: Functions for reading and displaying satellite data for oceanographic applications
+Version: 0.1
+Date: 2019-03-01
+Encoding: UTF-8
+Author: Héctor Villalobos and Eduardo González-Rodríguez <egonzale@cicese.mx>
+Maintainer: Héctor Villalobos <hvillalo@ipn.mx>
+Description: Main functions extract a user defined subset of satellite data from nc or hdf5 files which are then available for further analyses and can also be displayed in maps. Currently supported NOAA products includes: Moderate-resolution Imaging Spectroradiometer (from Aqua satellite: MODIS-Aqua) and Sea-viewing Wide Field-of-view Sensor (SeaWiFS). Also, The functions have been tested with sea surface temperature (SST), chlorophyll-a (Chl-a) concentration and net ocean primary production from Oregon State University. 
+Depends: R (>= 3.5.0)
+License: GPL-3
+URL: https://github.com/hvillalo/satin2
+BugReports: https://github.com/hvillalo/satin2/issues
+Collate: satin-class.R read.cmems.R read.ghrsst.R read.nasaoc.R read.osunpp.R
+         fmainPos.R imageScale.R plot.satin.R satinPalette.R quiver.R
+         verticalProfiles.R satinDataframe.R pixelate.R climatology.R crop.R
+         extractPts.R isolines.R
+Imports:
+  ncdf4,
+  maps,
+  maptools,
+  PBSmapping,
+  grDevices,
+  splancs,
+  sp,
+  geosphere,
+  graphics,
+  methods
