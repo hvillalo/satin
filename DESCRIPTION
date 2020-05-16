@@ -14,7 +14,7 @@ BugReports: https://github.com/hvillalo/satin2/issues
 Collate: satin-class.R read.cmems.R read.ghrsst.R read.nasaoc.R read.osunpp.R
          fmainPos.R imageScale.R plot.satin.R satinPalette.R quiver.R
          verticalProfiles.R satinDataframe.R pixelate.R climatology.R crop.R
-         extractPts.R isolines.R
+         extractPts.R isolines.R satinMean.R anomaly.R
 Imports:
   ncdf4,
   maps,

@@ -23,7 +23,7 @@ function(X, reverse = FALSE)
     attribs <-  X@attribs
     attribs$period <- X@period
     attribs$depth <- X@depth
-    attribs$de_pe <- paste("depth", rep(round(X@depth, 1), each = np), "_", 
+    attribs$labels <- paste("depth", rep(round(X@depth, 1), each = np), "_", 
                            "T", rep(format(X@period$tmStart, "%Y-%m-%d"), nd), sep = "")
     attr(ans, "attribs") <- attribs
     class(ans) <- c("satinDataframe", "data.frame")

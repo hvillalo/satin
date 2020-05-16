@@ -26,6 +26,6 @@ function(X, depth = NULL)
   pFr <- format(X@period$tmStart[1], "%Y-%m-%d")
   pTo <- format(X@period$tmEnd[dim(z)[3]], "%Y-%m-%d")
   X@data <- clim
-  X@period$label <- paste(dimnames(clim)[[3]], " (at ", d, ") \n from ", pFr, " to: ", pTo, sep="")
+  X@attribs$labels <- paste(dimnames(clim)[[3]], " (at ", d, ") \n from ", pFr, " to: ", pTo, sep="")
   X
 }
