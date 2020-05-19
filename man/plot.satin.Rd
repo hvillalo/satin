@@ -1,4 +1,5 @@
 \name{plot.satin}
+\alias{plot.satin}
 \alias{plot,satin,missing-method}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{

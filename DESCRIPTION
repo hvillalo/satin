@@ -25,4 +25,5 @@ Imports:
   sp,
   geosphere,
   graphics,
-  methods
+  methods,
+  lubridate

@@ -24,7 +24,7 @@ Objects of class \code{"satin"} are created by importing functions: \code{read.n
 }
 \section{Methods}{
   \describe{
-    \item{plot}{\code{signature(x = "satin", y = "missing")}: plot method for \code{"satin"} objects. See details in \code{\link{plot.satin}}}
+    \item{plot}{\code{signature(x = "satin", y = "missing")}: plot method for \code{"satin"} objects. See details in \code{plot.satin}}
     \item{summary}{\code{signature(object = "satin")}: summarize object. See example below}
 	 }
 }
@@ -32,7 +32,7 @@ Objects of class \code{"satin"} are created by importing functions: \code{read.n
 Héctor Villalobos
 }
 \seealso{
-See \code{\link{read.nasaoc}}; \code{\link{read.osunpp}}; \code{\link{read.ghrsst}}; and \code{\link{read.cmems}} for functions producing \code{"satin"} objects, and \code{\link{plot.satin}} for a complete description of plotting arguments.
+See \code{\link{read.nasaoc}}; \code{\link{read.osunpp}}; \code{\link{read.ghrsst}}; and \code{\link{read.cmems}} for functions producing \code{"satin"} objects, and \code{plot.satin} for a complete description of plotting arguments.
 }
 \examples{
 data(dsst)

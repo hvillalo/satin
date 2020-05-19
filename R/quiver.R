@@ -85,7 +85,7 @@ function(u, v, period = 1, depth = 1, xlim = NULL, ylim = NULL, scale = 1,
     if (colbar == TRUE){
       layout( matrix(c(2, 1), ncol = 2), widths = c(7/8, 1/8), heights = c(1, 1) )
       par(mar = c(5.1, 0, 4.1, 4))
-      imageScale(z = c(u,v), col = ca$pal, breaks = ca$breaks, axis.pos = 4, log = FALSE)
+      satin2::imageScale(z = c(u,v), col = ca$pal, breaks = ca$breaks, axis.pos = 4, log = FALSE)
       mtext(expression(m%.%s^{-1}), side = 4, line = -1.5, outer = TRUE)
       par(mar = c(5.1, 4.1, 4.1, 0.1)) 
     }

@@ -39,7 +39,7 @@ quiver(u, v, period = 1, depth = 1, xlim = NULL, ylim = NULL, scale = 1,
 }
 
 \details{
-Usage and behavior of this function closely resembles that of \code{\link{plot.satin}}. It differs in that two different satin objects are needed, one for each component of ocean current velocities. Also, the ocean current vectors can be overlayed to an existing plot of another variable, as the temperature, for instance.
+Usage and behavior of this function closely resembles that of \code{plot.satin}. It differs in that two different satin objects are needed, one for each component of ocean current velocities. Also, the ocean current vectors can be overlayed to an existing plot of another variable, as the temperature, for instance.
 }
 \value{
  A map of the ocean current velocities is produced.

@@ -21,7 +21,7 @@ climatology(X, depth = NULL)
 For Copernicus data files containing more than one variable, the \code{\link{read.cmems}} function returns a named list, with elements corresponding to each variable. In order to use these objects with \code{climatology} the appropriate indexing should be applied (see examples below).
 }
 \value{
- An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates coverage, mean, standard deviation, minimum and maximum. Also, an extra element (\code{label}) is included in the slot \code{period} to summarize the start  and end times used for the climatology.
+ An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates coverage, mean, standard deviation, minimum and maximum. Also, an extra element (\code{label}) is included in the slot \code{attribs} to summarize the start  and end times used for the climatology.
 }
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez
