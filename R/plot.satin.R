@@ -46,7 +46,7 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
      units <- X@attribs$units
     layout( matrix(c(2, 1), ncol = 2), widths = c(7/8, 1/8), heights = c(1, 1) )
     par(mar = c(5.1, 0, 4.1, 4))
-    imageScale(z = t(z[nrow(z):1, ]), col = cbp, breaks = cbb, axis.pos = 4, las = 2, log = log)
+    satin2::imageScale(z = t(z[nrow(z):1, ]), col = cbp, breaks = cbb, axis.pos = 4, las = 2, log = log)
     mtext(units, side = 4, line = -1.5, outer = TRUE)
     par(mar = c(5.1, 4.1, 4.1, 0.1)) 
   }

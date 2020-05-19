@@ -30,7 +30,7 @@ function(X, points = NULL)
   attribs <-  X@attribs
   attribs$period <- X@period
   attribs$depth <- X@depth
-  attribs$de_pe <- paste("depth", rep(round(X@depth, 1), each = np), "_", "T", 
+  attribs$labels <- paste("depth", rep(round(X@depth, 1), each = np), "_", "T", 
                         rep(format(X@period$tmStart, "%Y-%m-%d"), nd), sep = "")
   
   for (i in 1:nPts){

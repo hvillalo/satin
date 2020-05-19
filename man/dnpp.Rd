@@ -9,22 +9,23 @@
 }
 \usage{data("dnpp")}
 \format{
-  The format is:
 Formal class 'satin' [package "satin2"] with 6 slots
-  ..@ lon    : num [1:180] -119 -119 -119 -119 -119 ...
-  ..@ lat    : num [1:180] 20.1 20.1 20.2 20.3 20.4 ...
-  ..@ data   : num [1:180, 1:180, 1] 285 292 270 279 262 ...
-  ..@ attribs:List of 6
-  .. ..$ title             : chr "Ocean Productivity"
-  .. ..$ longname          : chr "Ocean Net Primary Production"
-  .. ..$ name              : chr "npp"
-  .. ..$ units             : chr "mgC m-2 day-1"
-  .. ..$ temporal_range    : chr "8 day"
-  .. ..$ spatial_resolution: chr "9.26 km"
-  ..@ period :List of 2
-  .. ..$ tmStart: POSIXct[1:1], format: "2013-03-30"
-  .. ..$ tmEnd  : POSIXct[1:1], format: "2013-04-06 23:59:59"
-  ..@ depth  : num(0) 
+\tabular{ll}{
+  ..@ lon  \tab  : num [1:180] -119 -119 -119 -119 -119 ...\cr
+  ..@ lat  \tab  : num [1:180] 20.1 20.1 20.2 20.3 20.4 ...\cr
+  ..@ data  \tab : num [1:180, 1:180, 1] 285 292 270 279 262 ...\cr
+  ..@ attribs:List of 6 \tab \cr
+  .. ..$ title    \tab         : chr "Ocean Productivity"\cr
+  .. ..$ longname \tab         : chr "Ocean Net Primary Production"\cr
+  .. ..$ name     \tab         : chr "npp"\cr
+  .. ..$ units    \tab         : chr "mgC m-2 day-1"\cr
+  .. ..$ temporal_range \tab   : chr "8 day"\cr
+  .. ..$ spatial_resolution \tab : chr "9.26 km"\cr
+  ..@ period :List of 2 \tab \cr
+  .. ..$ tmStart \tab : POSIXct[1:1], format: "2013-03-30"\cr
+  .. ..$ tmEnd \tab  : POSIXct[1:1], format: "2013-04-06 23:59:59"\cr
+  ..@ depth \tab : num(0)
+  }
 }
 \details{
 Source data file (vgpm.2013089.hdf.gz) was downloaded from the link below, decompressed with \code{gunzip} function from \pkg{R.utils} package, then converted to hdf v5 with h4toh5 Conversion Software (\url{https://support.hdfgroup.org/products/hdf5_tools/h4toh5/download.html}) before being imported with the \code{\link{read.osunpp}} function. The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.

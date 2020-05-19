@@ -10,38 +10,41 @@
 
 \usage{data("dcmems")}
 \format{
-  The format is:
-List of 2
- $ thetao:Formal class 'satin' [package "satin2"] with 6 slots
-  .. ..@ lon    : num [1:181] -119 -119 -119 -119 -119 ...
-  .. ..@ lat    : num [1:169] 20 20.1 20.2 20.2 20.3 ...
-  .. ..@ data   : num [1:169, 1:181, 1:2, 1:5] 23.5 23.5 23.5 23.4 23.4 ...
-  .. ..@ attribs:List of 6
-  .. .. ..$ title             : chr "thetao"
-  .. .. ..$ longname          : chr "Temperature"
-  .. .. ..$ name              : chr "thetao"
-  .. .. ..$ units             : chr "degrees_C"
-  .. .. ..$ temporal_range    : chr "monthly"
-  .. .. ..$ spatial_resolution: chr "9.2 km"
-  .. ..@ period :List of 2
-  .. .. ..$ tmStart: POSIXct[1:2], format: "2010-11-16 00:00:00" ...
-  .. .. ..$ tmEnd  : POSIXct[1:2], format: "2010-11-16 00:00:00" ...
-  .. ..@ depth  : num [1:5] 0.494 9.573 29.445 92.326 318.127
- $ zos   :Formal class 'satin' [package ".GlobalEnv"] with 6 slots
-  .. ..@ lon    : num [1:181] -119 -119 -119 -119 -119 ...
-  .. ..@ lat    : num [1:169] 20 20.1 20.2 20.2 20.3 ...
-  .. ..@ data   : num [1:169, 1:181, 1:2, 1] 0.336 0.34 0.343 0.345 0.347 ...
-  .. ..@ attribs:List of 6
-  .. .. ..$ title             : chr "zos"
-  .. .. ..$ longname          : chr "Sea surface height"
-  .. .. ..$ name              : chr "zos"
-  .. .. ..$ units             : chr "m"
-  .. .. ..$ temporal_range    : chr "monthly"
-  .. .. ..$ spatial_resolution: chr "9.2 km"
-  .. ..@ period :List of 2
-  .. .. ..$ tmStart: POSIXct[1:2], format: "2010-11-16 00:00:00" ...
-  .. .. ..$ tmEnd  : POSIXct[1:2], format: "2010-11-16 00:00:00" ...
-  .. ..@ depth  : num 0.494
+List of 2\cr
+$ thetao:Formal class 'satin' [package "satin2"] with 6 slots
+\tabular{ll}{ 
+  .. ..@ lon \tab   : num [1:181] -119 -119 -119 -119 -119 ...\cr
+  .. ..@ lat \tab   : num [1:169] 20 20.1 20.2 20.2 20.3 ...\cr
+  .. ..@ data \tab  : num [1:169, 1:181, 1:2, 1:5] 23.5 23.5 23.5 23.4 23.4 ...\cr
+  .. ..@ attribs:List of 6 \tab \cr
+  .. .. ..$ title     \tab        : chr "thetao"\cr
+  .. .. ..$ longname  \tab        : chr "Temperature"\cr
+  .. .. ..$ name      \tab        : chr "thetao"\cr
+  .. .. ..$ units     \tab        : chr "degrees_C"\cr
+  .. .. ..$ temporal_range  \tab  : chr "monthly"\cr
+  .. .. ..$ spatial_resolution \tab : chr "9.2 km"\cr
+  .. ..@ period :List of 2 \tab \cr
+  .. .. ..$ tmStart \tab : POSIXct[1:2], format: "2010-11-16 00:00:00" ...\cr
+  .. .. ..$ tmEnd  \tab : POSIXct[1:2], format: "2010-11-16 00:00:00" ...\cr
+  .. ..@ depth  \tab  : num [1:5] 0.494 9.573 29.445 92.326 318.127
+  }
+ $ zos   :Formal class 'satin' [package "satin2"] with 6 slots
+\tabular{ll}{  
+  .. ..@ lon  \tab  : num [1:181] -119 -119 -119 -119 -119 ...\cr
+  .. ..@ lat  \tab  : num [1:169] 20 20.1 20.2 20.2 20.3 ...\cr
+  .. ..@ data \tab   : num [1:169, 1:181, 1:2, 1] 0.336 0.34 0.343 0.345 0.347 ...\cr
+  .. ..@ attribs:List of 6 \tab \cr
+  .. .. ..$ title     \tab        : chr "zos"\cr
+  .. .. ..$ longname  \tab        : chr "Sea surface height"\cr
+  .. .. ..$ name      \tab        : chr "zos"\cr
+  .. .. ..$ units     \tab        : chr "m"\cr
+  .. .. ..$ temporal_range  \tab  : chr "monthly"\cr
+  .. .. ..$ spatial_resolution \tab : chr "9.2 km"\cr
+  .. ..@ period :List of 2 \tab \cr
+  .. .. ..$ tmStart \tab : POSIXct[1:2], format: "2010-11-16 00:00:00" ...\cr
+  .. .. ..$ tmEnd \tab : POSIXct[1:2], format: "2010-11-16 00:00:00" ...\cr
+  .. ..@ depth  \tab : num 0.494
+  }
 }
 \details{
 Source data file was downloaded from the link below, then imported with the \code{\link{read.cmems}} function. The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West. Potential temperature includes five depth levels (0.494, 9.573, 29.445, 92.326, 318.127).
