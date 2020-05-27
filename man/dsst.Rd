@@ -18,7 +18,7 @@ Formal class 'satin' [package "satin2"] with 6 slots
   .. ..$ title    \tab    : chr "HMODISA Level-3 Standard Mapped Image"\cr
   .. ..$ longname \tab    : chr "4um Sea Surface Temperature"\cr
   .. ..$ name     \tab    : chr "sst4"\cr
-  .. ..$ units    \tab   : chr "degree_C"\cr
+  .. ..$ units    \tab    : chr "degree_C"\cr
   .. ..$ temporal_range \tab   : chr "8-day"\cr
   .. ..$ spatial_resolution \tab : chr "4.64 km"\cr
   ..@ period :List of 2 \tab \cr
@@ -43,3 +43,4 @@ summary(dsst)
 plot(dsst)
 }
 \keyword{datasets}
+

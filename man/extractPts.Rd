@@ -39,7 +39,6 @@ plot(dsst)
 values2 <- extractPts(dsst) # *** click on the image ***
 values2
 }
-
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
