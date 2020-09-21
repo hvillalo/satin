@@ -15,11 +15,8 @@ read.nasaoc <-
     spatRes <- ncatt_get( ncf, varid=0)[[srvn]]
     vtitle <- ncatt_get( ncf, varid=0)[['title']]
     type <- unlist(strsplit(vtitle, split = " "))[1]
-    if ( type == "AVHRR" ) {
-      pv <- ncatt_get( ncf, varid=0 )[['product_version']]
-      if ( pv == "PFV5.3" )
-        nv <- 5
-    }
+    if ( type == "AVHRR" ) 
+      nv <- grep("temperature", names(ncf$var), ignore.case = TRUE)
     
     # get variable name and units
     vname <- names(ncf$var)[nv]
@@ -47,6 +44,9 @@ read.nasaoc <-
     # process nc file(s)
     for (h in 1:ni) {
       ncf <- nc_open(nc[h])
+      type <- unlist(strsplit(vtitle, split = " "))[1]
+      if ( type == "AVHRR" ) 
+        nv <- grep("temperature", names(ncf$var), ignore.case = TRUE)
       vn <- names(ncf$var)[nv]
       if (vname != vn)
         stop(paste("type of variable is different in at least one nc file:", vname, vn))
@@ -68,6 +68,12 @@ read.nasaoc <-
       # read data
       data <- ncvar_get(ncf, varid=vn, start = st, count = cnt)
       data <- t(data)#[xlon, ylat])
+	  # AVHRR quality level
+	  if (type == "AVHRR") {
+	    mask <- ncvar_get(ncf, varid="quality_level", start = st, count = cnt)
+	    mask <- t(mask)
+	    data[mask < 4] <- NA # keep only acceptable and best quality
+	  }
       aoi <-  data[sort.list(nrow(data):1), ]
       aoi[aoi == na] <- NA
       nc_close(ncf)

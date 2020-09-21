@@ -9,10 +9,10 @@
  Visual representation of ocean data from satellite images (Aqua Modis; Pathfinder AVHRR) or derived from models (ocean productivity; CMEMS).
 }
 \usage{
-plot.satin(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
-           map = NULL, map.col = "grey", map.outline = "black", 
-           scheme = "default", col.sep = 0.1, colbar = TRUE, main = NULL, 
-           main.pos = "topright", log = FALSE, units = NULL, ...)
+\method{plot}{satin}(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
+           map = NULL, map.col = "grey", map.outline = "black", scheme = "default",
+           col.sep = 0.1, colbar = TRUE, main = NULL, main.pos = "topright",
+           log = FALSE, units = NULL,  xaxt = "s", yaxt = "s", atx = NULL, aty = NULL,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,7 +22,7 @@ plot.satin(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   \item{xlim}{ minimum and maximum longitude values for the map. }
   \item{ylim}{ minimum and maximum latitude values for the map. }
   \item{zlim }{ minimum and maximum ocean data  values. }
-  \item{map}{ a user defined map of class "sp". }
+  \item{map}{ a user defined map of class "SpatialPolygons". }
   \item{map.col}{ color for the map. }
   \item{map.outline}{ color for the map outline. }
   \item{scheme}{ color scheme for the ocean data, either: "default" or a vector of valid color names.}
@@ -31,7 +31,9 @@ plot.satin(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   \item{main}{ title for the map, defaults to the corresponding selected image \code{period$tmStart} in \code{x}. }
   \item{main.pos}{ position for the title: "topright", "topleft", "bottomright" or "bottomleft".  }
   \item{log}{ logical. If \code{TRUE}, the ocean variable is log transformed (base 10). This is useful for chlorophyll concentration data.}
-  \item{units}{ title for the plot, defaults to \code{units} in \code{x}. }
+  \item{units}{ color bar label, defaults to \code{units} in \code{x}. }
+  \item{xaxt, yaxt}{ "n" to supress axis. }
+  \item{atx, aty}{ specify tick-mark locations for fine tuning axes annotations. }
   \item{\dots}{ further arguments to pass to \code{\link{plot}}. }
 }
 \details{

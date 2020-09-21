@@ -31,16 +31,9 @@ This function is meant to be used in combination with \code{\link{anomaly}} to o
 \value{
  An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates averages by time period. An extra element (\code{labels}) is included in the slot \code{attribs} to identify the time period used for the averages.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez
 }
-\note{
-%%  ~~further notes~~
-}
-
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{

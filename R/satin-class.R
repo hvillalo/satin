@@ -9,33 +9,34 @@ satin <- setClass("satin",
   )
 )
 
-
-validSatin <- function(object){
-  lx <- length(object@lon); ly <- length(object@lat)
-  lp <- length(object@period$tmStart); ld <- length(object@depth)
-  ddata <- dim(object@data)
-  # check data dimensions
-  if (lx != ddata[2])
-    return(paste("longitudes mismatch ", lx, " != ", ddata[2], sep = ""))
-  if (ly != ddata[1])
-    return(paste("latitudes mismatch ", ly, " != ", ddata[1], sep = ""))
-  if (lp != ddata[3])
-    return(paste("periods mismatch ", lp, " != ", ddata[3], sep = ""))
-  # if different depths
-  if (length(ddata) == 4){
-    if (ld != ddata[4])
-      return(paste("depths mismatch ", ld, " != ", ddata[4], sep = ""))
-  }  
-  # check class of periods
-  if (!inherits(object@period$tmStart, "POSIXct"))
-    return(paste("periods must be of class POSIXct"))
-  if (length(object@period) == 2){
-    if (!inherits(object@period$tmEnd, "POSIXct"))
-      return(paste("periods must be of class POSIXct"))
-  }
-}
-
-setValidity("satin", validSatin)
+setValidity("satin", method = 
+    function(object){
+      lx <- length(object@lon)
+      ly <- length(object@lat)
+      lp <- length(object@period$tmStart)
+      ld <- length(object@depth)
+      ddata <- dim(object@data)
+      # check data dimensions
+      if (lx != ddata[2])
+        return(paste("longitudes mismatch ", lx, " != ", ddata[2], sep = ""))
+      if (ly != ddata[1])
+        return(paste("latitudes mismatch ", ly, " != ", ddata[1], sep = ""))
+      if (lp != ddata[3])
+        return(paste("periods mismatch ", lp, " != ", ddata[3], sep = ""))
+      # if different depths
+      if (length(ddata) == 4){
+        if (ld != ddata[4])
+         return(paste("depths mismatch ", ld, " != ", ddata[4], sep = ""))
+      }  
+      # check class of periods
+      if (!inherits(object@period$tmStart, "POSIXct"))
+        return(paste("periods must be of class POSIXct"))
+      if (length(object@period) == 2){
+        if (!inherits(object@period$tmEnd, "POSIXct"))
+          return(paste("periods must be of class POSIXct"))
+      }
+    }
+)
 
 setMethod("show", "satin", function(object){
   x <- list()
@@ -68,7 +69,6 @@ setMethod("show", "satin", function(object){
   print(x[["ans"]])
   invisible(x)
 })
-
 
 if (!isGeneric("plot"))
   setGeneric("plot", function(x, y, ...)

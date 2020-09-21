@@ -27,14 +27,8 @@ In principle, anomalies can be calculated for other ocean variables and time per
 \value{
  An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates the calculated anomalies. An extra element (\code{labels}) is included in the slot \code{attribs} to identify the time period of the anomalies.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

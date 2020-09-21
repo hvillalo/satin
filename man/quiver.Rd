@@ -28,7 +28,7 @@ quiver(u, v, period = 1, depth = 1, xlim = NULL, ylim = NULL, scale = 1,
   \item{scheme}{ color scheme for the arrows. Either: "default" or a vector of valid color names.}
   \item{ra.pos}{ position (lon, lat) for a reference arrow. }
   \item{ra.speed}{ speed (in m/s) of the reference arrow. The mean is used by default.}
-  \item{map}{ a user defined map of class "sp". }
+  \item{map}{ a user defined map of class "SpatialPolygons". }
   \item{map.col}{ color for the map. }
   \item{map.outline}{ color for the map outline. }
   \item{colbar}{ logical. If \code{TRUE} a color bar is added to the plot.  }

@@ -1,8 +1,8 @@
 plot.satin <-
 function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
-   map = NULL, map.col = "grey", map.outline = "black",  
-   scheme = "default", col.sep = 0.1, colbar = TRUE, main = NULL, 
-   main.pos = "topright", log = FALSE, units = NULL, ...)
+        map = NULL, map.col = "grey", map.outline = "black", scheme = "default", 
+        col.sep = 0.1, colbar = TRUE, main = NULL, main.pos = "topright", 
+        log = FALSE, units = NULL, xaxt = "s", yaxt = "s", atx = NULL, aty = NULL, ...)
 {
   X <- x
   x <- X@lon
@@ -26,8 +26,8 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
     ylim <- c(floor(min(y)), ceiling(max(y)))
   if ( missing(zlim) ) 
     zlim <- c(floor(min(z, na.rm = TRUE)), ceiling(max(z, na.rm = TRUE)))
-  xlims <- xlim
-  ylims <- ylim
+  xli <- xlim
+  yli <- ylim
 
   if ( log == TRUE ){
      z[z > 20] <- 20
@@ -39,31 +39,41 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   cbp <- cb$palette
   cbb <- cb$breaks
 
-  #op <- par(no.readonly = TRUE)  
-  #on.exit(par(op))
   if (colbar == TRUE){
     if ( missing(units) )
      units <- X@attribs$units
-    layout( matrix(c(2, 1), ncol = 2), widths = c(7/8, 1/8), heights = c(1, 1) )
-    par(mar = c(5.1, 0, 4.1, 4))
+    op <- par(no.readonly = TRUE)  
+    on.exit(par(op))
+    layout( matrix(c(2, 1), ncol = 2), widths = c(8/10, 1/5), heights = c(1, 1) )
+    par(mar = c(5.1, 0.1, 4.1, 4))
     satin2::imageScale(z = t(z[nrow(z):1, ]), col = cbp, breaks = cbb, axis.pos = 4, las = 2, log = log)
     mtext(units, side = 4, line = -1.5, outer = TRUE)
-    par(mar = c(5.1, 4.1, 4.1, 0.1)) 
+    par(mar = c(5.1, 4.1, 4.1, 0.5)) 
   }
-  if (colbar == FALSE)
-    par(mar = c(5.1, 4.1, 4.1, 3.5))  
-  image(x, y, t(z), xlim = xlims, ylim = ylims, zlim, asp = 1, xlab = "", ylab = "",
+  image(x, y, t(z), xlim = xli, ylim = yli, zlim, asp = 1, xlab = "", ylab = "",
       col = cbp, breaks = cbb, xaxt = "n", yaxt = "n")
   pu <- par("usr")
   if ( missing(map) ) {  
    map("world", xlim = pu[1:2], ylim = pu[3:4], add = TRUE)
-   box(); axis(1); axis(2)
   } else {
-  plot(map, xlim = pu[1:2], ylim = pu[3:4], xaxs = "i", yaxs = "i", axes = TRUE, 
-       lty = 1, col = map.col, border = map.outline, add = TRUE)
-  box(); axis(1); axis(2, las=1)  
+   plot(map, xlim = pu[1:2], ylim = pu[3:4], xaxs = "i", yaxs = "i", 
+        axes = FALSE, lty = 1, col = map.col, border = map.outline, add = TRUE)
   }
+  box() 
+  if (xaxt == "s"){
+   if (missing(atx)){
+    px <- par("xaxp")
+	atx <- seq(px[1], px[2], len=px[3]+1) 
+   }
+   sp::degAxis(1, at = atx)
+  } 
+  if (yaxt == "s"){
+   if (missing(aty)){
+    py <- par("yaxp")
+	aty <- seq(py[1], py[2], len=py[3]+1)
+   }
+   sp::degAxis(2, at = aty, las = 1)
+  } 
   xyp <- fmainPos(pu, main.pos)
   text(xyp$cx, xyp$cy, label = main, pos = xyp$pos)
-  #invisible(pu)
 }

@@ -20,7 +20,7 @@ isolines(X, levels, period = 1, depth = 1, plot = TRUE)
   Polyline coordinates of desired isolines are calculated via \code{contourLines} and \code{convCP} (from \pkg{PBSMapping} package). Perhaps only interesting with sea surface temperatures (isotherms). For smoother isolines, the function \code{\link{pixelate}} can be used to spatialy re-scale the data. In order to use this function with Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be previously done.
 }
 \value{
-  A data frame object of class \code{"PolySet"}. See \code{help(PolySet)} for a complete description.
+  A list with two data frames of class \code{"PolySet"} and \code{"PolyData"}. See \code{help(PolySet)} and \code{help(PolyData)} for a complete description.
 }
 \author{ Héctor Villalobos, from code in examples of \pkg{PBSMapping} package}
 \references{
