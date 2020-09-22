@@ -78,8 +78,9 @@ function(u, v, period = 1, depth = 1, xlim = NULL, ylim = NULL, scale = 1,
   }
 
   if ( add2map == TRUE ) {
-    arrows( xcoor, ycoor, xcoor + u, ycoor + v, col = colarrow,
-        length = length * min(par.uin()), ... )
+    suppressWarnings(
+      arrows( xcoor, ycoor, xcoor + u, ycoor + v, col = colarrow,
+        length = length * min(par.uin()), ... ))
 	pu <- par("usr")	
   } else {
     if (colbar == TRUE){
