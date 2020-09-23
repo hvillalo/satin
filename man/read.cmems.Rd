@@ -15,14 +15,14 @@ read.cmems(nc)
   \item{nc}{ name of the netCDF file to be read.}
 }
 \details{
-The function can read data from netCDF files downloaded from CMEMS web page (\url{http://marine.copernicus.eu/}).  It has been tested with Global Ocean Physical Reanalysis, and Global Ocean Biogeochemistry Hindcast databases.  When downloading Copernicus data files, the user can select one or several variables (see references below), depth levels, daily or monthly means, time and spatial coverage.  This makes every Copernicus netCDF file unique.  The \code{read.cmems} function attempts to read all the variables and depth levels at once.  When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced.  On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. 
+The function can read data from netCDF files downloaded from CMEMS web page (\url{https://marine.copernicus.eu/}).  It has been tested with Global Ocean Physical Reanalysis, and Global Ocean Biogeochemistry Hindcast databases.  When downloading Copernicus data files, the user can select one or several variables (see references below), depth levels, daily or monthly means, time and spatial coverage.  This makes every Copernicus netCDF file unique.  The \code{read.cmems} function attempts to read all the variables and depth levels at once.  When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced.  On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. 
 }
 
 \value{
 A named list, with elements corresponding to each variable included in the netCDF file.  Each list element (or when only one variable is present) is an object of \code{"satin"}. See \code{\link{satin-class}} for details.
 }
 \references{
-\url{ http://marine.copernicus.eu/services-portfolio/access-to-products/ }
+\url{ https://resources.marine.copernicus.eu/?option=com_csw&task=results }
 
 Fernandez, E. and Lellouche, J. M. 2018 Product User Manual for the Global Ocean Physical Reanalysis product, issue 1.1. EU Copernicus Marine Service.
   

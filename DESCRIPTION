@@ -1,6 +1,6 @@
 Package: satin2
 Type: Package
-Title: Functions for reading, visualising and analysing ocean data derived from satellites for oceanographic applications
+Title: Functions for Reading, Visualising and Analysing Ocean Data Derived from Satellites for Oceanographic Applications
 Version: 0.1
 Date: 2020-09-20
 Encoding: UTF-8

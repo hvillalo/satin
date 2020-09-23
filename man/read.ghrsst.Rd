@@ -23,7 +23,7 @@ This function can read SST data from one or multiple netCDF files downloaded fro
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.
 }
 \references{
-\url{http://podaac.jpl.nasa.gov/Multi-scale_Ultra-high_Resolution_MUR-SST}
+\url{https://www.ghrsst.org/}
 }
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez

@@ -50,7 +50,7 @@ $ thetao:Formal class 'satin' [package "satin2"] with 6 slots
 Source data file was downloaded from the link below, then imported with the \code{\link{read.cmems}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.  Potential temperature includes five depth levels (0.494, 9.573, 29.445, 92.326, 318.127).
 }
 \source{
-  \url{http://marine.copernicus.eu/}
+  \url{https://marine.copernicus.eu/}
 }
 \references{
 Fernandez, E. and Lellouche, J. M. 2018 \emph{Product Manual for the Global Ocean Physical Reanalysis product, issue 1.1}. EU Copernicus Marine Service.
