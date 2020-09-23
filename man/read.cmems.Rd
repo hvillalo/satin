@@ -2,10 +2,10 @@
 \alias{read.cmems}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
- Read ocean products data from CMEMS
+Read ocean products data from CMEMS
 }
 \description{
- Read data from netCDF files downloaded from Copernicus Marine Environment Monitoring Service (CMEMS).
+Read data from netCDF files downloaded from Copernicus Marine Service (CMEMS).
 }
 \usage{
 read.cmems(nc)
@@ -15,21 +15,20 @@ read.cmems(nc)
   \item{nc}{ name of the netCDF file to be read.}
 }
 \details{
-The function can read data from netCDF files downloaded from CMEMS web page (\url{http://marine.copernicus.eu/}). When downloading Copernicus data files, the user can select one or several variables (among 11 different choices, see references below), depth levels, daily or monthly means, time and spatial coverage. This makes every Copernicus netCDF file unique. The \code{read.cmems} function attempts to read all the variables and depth levels at once. When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced. On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. It has been tested with Global Ocean Physical Reanalysis products: global-reanalysis-phy-001-030 and global-reanalysis-phy-001-031, and Global Ocean Biogeochemistry Hindcast: global-reanalysis-bio-001-029 databases.
+The function can read data from netCDF files downloaded from CMEMS web page (\url{http://marine.copernicus.eu/}).  It has been tested with Global Ocean Physical Reanalysis, and Global Ocean Biogeochemistry Hindcast databases.  When downloading Copernicus data files, the user can select one or several variables (see references below), depth levels, daily or monthly means, time and spatial coverage.  This makes every Copernicus netCDF file unique.  The \code{read.cmems} function attempts to read all the variables and depth levels at once.  When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced.  On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. 
 }
 
 \value{
- A named list, with elements corresponding to each variable included in the netCDF file. Each list element (or when only one variable is present) is an object of  \code{"satin"}. See \code{\link{satin-class}} for details.
+A named list, with elements corresponding to each variable included in the netCDF file.  Each list element (or when only one variable is present) is an object of \code{"satin"}. See \code{\link{satin-class}} for details.
 }
 \references{
 \url{ http://marine.copernicus.eu/services-portfolio/access-to-products/ }
 
-  Fernandez E and Lellouche JM. 2018. Product User Manual for the Global Ocean Physical Reanalysis product, issue 1.1. EU Copernicus Marine Service.
+Fernandez, E. and Lellouche, J. M. 2018 Product User Manual for the Global Ocean Physical Reanalysis product, issue 1.1. EU Copernicus Marine Service.
   
-  Garric G and Parent L. 2018. Product User Manual for the Global Ocean Reanalysis Products, issue 3.4. EU
-  Copernicus Marine Service.
+Garric, G. and Parent, L. 2018 Product User Manual for the Global Ocean Reanalysis Products, issue 3.4. EU Copernicus Marine Service.
   
-  Perruche C. 2019. Product User Manual for the Global Ocean Biogeochemistry Hindcast, issue 1.1. EU Copernicus Marine Service.
+Perruche, C. 2019 Product User Manual for the Global Ocean Biogeochemistry Hindcast, issue 1.1. EU Copernicus Marine Service.
 }
 \author{
 Héctor Villalobos

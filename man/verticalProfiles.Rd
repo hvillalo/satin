@@ -20,7 +20,7 @@ verticalProfiles(X, point = NULL, xlim = NULL, ylim = NULL)
 %%     ~~Describe \code{X} here~~
 }
 \details{
-Selected Copernicus data should be available at several depths, otherwise is meaningless. Also, if more than one point is selected, only the first will be processed.
+Selected Copernicus data should be available at several depths, otherwise is meaningless.  Also, if more than one point is selected, only the first will be processed.
 }
 \examples{
 # load sample Copernicus data

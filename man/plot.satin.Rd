@@ -6,7 +6,7 @@
  Visualise ocean data
 }
 \description{
- Visual representation of ocean data from satellite images (Aqua Modis; Pathfinder AVHRR) or derived from models (ocean productivity; CMEMS).
+Visual representation of ocean data from satellite images (MODIS, AVHRR, etc.) or derived from models (ocean productivity; CMEMS).
 }
 \usage{
 \method{plot}{satin}(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
@@ -37,7 +37,7 @@
   \item{\dots}{ further arguments to pass to \code{\link{plot}}. }
 }
 \details{
-  The only mandatory argument for this function to produce a map is an object of class "satin" (\code{x} in this case). All the other arguments are optional and can be used to customize the plot.  For chlorophyll concentration data, when \code{log = TRUE}, the color scale is fixed to a maximum value of 20, which implies that values above it are set to this maximum before applying logarithms.
+The only mandatory argument for this function to produce a map is an object of class "satin" (\code{x} in this case).  All the other arguments are optional and can be used to customize the plot.  For chlorophyll concentration data, when \code{log = TRUE}, the color scale is fixed to a maximum value of 20, which implies that values above it are set to this maximum before applying logarithms.
 }
 \value{
  A plot including a map, of the corresponding parameter is produced.

@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Spatial re-scaling of ocean data }
 \description{
-  This function down-scales ocean data by quadrants of user defined size (in degrees) according to a given function.
+This function down-scales ocean data by quadrants of user defined size (in degrees) according to a given function.
 }
 \usage{
 pixelate(X, extent = 0.25, FUN = mean)
@@ -15,7 +15,7 @@ pixelate(X, extent = 0.25, FUN = mean)
   \item{FUN}{ function to be applied for obtaining the quadrants' values, defaults to \code{mean}.}
 }
 \details{
-  The main interest of this function is to obtain smooth isolines for ocean data (e.g. isotherms). In order to use this function with Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be done.
+The main interest of this function is to obtain smooth isolines for ocean data (e.g. isotherms).  In order to use this function with Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be done.
 }
 \value{
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.

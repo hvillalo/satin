@@ -16,20 +16,20 @@ crop(X, polygon = NULL, return.poly = FALSE)
   a satin object as returned by \code{\link{read.nasaoc}}, \code{\link{read.ghrsst}}, \code{\link{read.osunpp}}, or \code{\link{read.cmems}}.  
 }
   \item{polygon}{
-  a polygon defining the area of interest (aoi) to be cuted.
+  a polygon defining the area of interest (aoi) to be cutted.
 }
 \item{return.poly}{
-  if TRUE, \code{crop} returns a list with the cuted satin object and the polygon drawn (a data frame).
+  if TRUE, \code{crop} returns a list with the cutted satin object and the polygon drawn (a data frame).
 }
 }
 \details{
- If provided, the polygon defining the aoi must have two columns with x and y coordinates. The function verifies that the last point is exactly the same as the first one. When not specified, the user can draw a polygon by clicking on a previously displayed image. The result is a satin object where the pixels outside the aoi are set to NA. In order to cut Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be previously done.
+If provided, the polygon defining the aoi must have two columns with x and y coordinates.  The function verifies that the last point is exactly the same as the first one.  When not specified, the user can draw a polygon by clicking on a previously displayed image.  The result is a satin object where the pixels outside the aoi are set to NA.  In order to cut Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be previously done.
 }
 \value{
-A cuted satin object.
+A cutted satin object.
 
 When \code{return.poly = TRUE}, a list with two components:
- \item{aoi}{cuted satin object.}
+ \item{aoi}{cutted satin object.}
  \item{polygon}{polygon coordinates defining the aoi.}
 
 }

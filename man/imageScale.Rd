@@ -31,14 +31,7 @@ which is closed at both ends.}
 \item{...}{Additional graphical parameters to pass to the \code{\link[graphics]{image}} function.}
 }
 \description{
-The \code{imageScale} function is wrapper for 
-\code{imageScale} and accepts the same arguments. 
-It converts a vector of values (\code{z}) 
-to a vector of color levels. One must define the number of colors. 
-The limits of the color scale ("zlim") or the break points for the 
-color changes("breaks") can also be defined. When breaks and zlim are 
-defined, breaks overrides zlim. All arguments are similar to those in the
-\code{image} function. Appearance is best when incorporated with \code{\link[graphics]{layout}}.
+The \code{imageScale} function is wrapper for \code{imageScale} and accepts the same arguments.  It converts a vector of values (\code{z}) to a vector of color levels.  One must define the number of colors.  The limits of the color scale ("zlim") or the break points for the color changes("breaks") can also be defined.  When breaks and zlim are defined, breaks overrides zlim. All arguments are similar to those in the \code{image} function.  Appearance is best when incorporated with \code{\link[graphics]{layout}}.
 }
 \author{
 Marc Taylor, modified for log scale by Héctor Villalobos
@@ -82,10 +75,7 @@ axis(4,at=breaks, las=2)
 box()
 abline(h=levs)
 par(op)
-
-
 }
-
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

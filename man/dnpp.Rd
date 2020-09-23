@@ -2,10 +2,10 @@
 \alias{dnpp}
 \docType{data}
 \title{
- Ocean Net Primary Production sample data
+Ocean Net Primary Production sample data
 }
 \description{
- Ocean Net Primary Production (8-day average; 9.26 km resolution) from March 30 to April 6 2013 off northwest Mexico.
+Ocean Net Primary Production (8-day average; 9.26 km resolution) from March 30 to April 6 2013 off northwest Mexico.
 }
 \usage{data("dnpp")}
 \format{
@@ -28,13 +28,13 @@ Formal class 'satin' [package "satin2"] with 6 slots
   }
 }
 \details{
-Source data file (vgpm.2013089.hdf.gz) was downloaded from the link below, decompressed with \code{gunzip} function from \pkg{R.utils} package, then converted to hdf v5 with h4toh5 Conversion Software (\url{https://support.hdfgroup.org/products/hdf5_tools/h4toh5/download.html}) before being imported with the \code{\link{read.osunpp}} function. The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
+Source data file (vgpm.2013089.hdf.gz) was downloaded from the link below, decompressed with \code{gunzip} function from \pkg{R.utils} package, then converted to hdf v5 with h4toh5 Conversion Software (\url{https://support.hdfgroup.org/products/hdf5_tools/h4toh5/download.html}) before being imported with the \code{\link{read.osunpp}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
 }
 \source{
   \url{http://www.science.oregonstate.edu/ocean.productivity/standard.product.php}
 }
 \references{
-   Behrenfeld MJ and Falkowski PG. 1997. Photosynthetic rates derived from satellite-based chlorophyll concentration, Limnology and Oceanography, 42:1-20.
+Behrenfeld, M. J. and Falkowski, P. G. 1997 Photosynthetic rates derived from satellite-based chlorophyll concentration, \emph{Limnology and Oceanography}, \bold{42}, 1--20.
 }
 \examples{
 data(dnpp)

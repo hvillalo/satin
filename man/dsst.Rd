@@ -2,10 +2,10 @@
 \alias{dsst}
 \docType{data}
 \title{
- SST sample data - Aqua Modis sensor 
+SST sample data - Aqua Modis sensor
 }
 \description{
-  Sea Surface Temperature (4 um nighttime; 8-day average; 4 km resolution) from March 29 to April 6 2013 off northwest Mexico.
+Sea Surface Temperature (4 um nighttime; 8-day average; 4 km resolution) from March 29 to April 6 2013 off northwest Mexico.
 }
 \usage{data("dsst")}
 \format{
@@ -28,7 +28,7 @@ Formal class 'satin' [package "satin2"] with 6 slots
   }
 }
 \details{
-Source data file (A20130892013096.L3m_8D_SST4_sst4_4km.nc) was downloaded from the link below, then imported with the \code{\link{read.nasaoc}} function. The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
+Source data file (A20130892013096.L3m_8D_SST4_sst4_4km.nc) was downloaded from the link below, then imported with the \code{\link{read.nasaoc}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
 }
 \source{
   \url{http://oceancolor.gsfc.nasa.gov/cgi/l3}

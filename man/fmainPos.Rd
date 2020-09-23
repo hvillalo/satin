@@ -2,7 +2,7 @@
 \alias{fmainPos}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Calculate coordinates for title in \code{plot.satin()} and \code{quiver()}
+Calculate coordinates for title in plots
 }
 \description{
 Internal function called by \code{plot.satin} and \code{quiver}.

@@ -5,7 +5,7 @@
 Anomalies of a satin object
 }
 \description{
-This function returns ocean data anomalies of a satin object. Anomalies are calculated subtracting a conforming average satin object.
+This function returns ocean data anomalies of a satin object.  Anomalies are calculated subtracting a conforming average satin object.
 }
 \usage{
 anomaly(X, Y)
@@ -16,16 +16,16 @@ anomaly(X, Y)
  a satin object obtained with \code{\link{satinMean}} for which anomalies are to be calculated. It must have identifying \code{labels} in the slot \code{attribs}.
 }
   \item{Y}{
- also a satin object returned by \code{\link{satinMean}} with the means to be subtracted to \code{X}. It must have the same \code{labels} as \code{X}.
+ also a satin object returned by \code{\link{satinMean}} with the means to be subtracted from \code{X}. It must have the same \code{labels} as \code{X}.
 }
 }
 \details{
-The anomalies of a satin object represent, for every pixel, the values above and below a reference average. A typical example can be monthly sea surface temperature anomalies for various years. These are calculated subtracting the corresponding average month for the whole period (see example below). 
+The anomalies of a satin object represent, for every pixel, the values above and below a reference average.  A typical example can be monthly sea surface temperature anomalies for various years.  These are calculated subtracting the corresponding average month for the whole period (see example below).
 
-In principle, anomalies can be calculated for other ocean variables and time periods, but is up to the user to determine if that makes sense. For example, let say that \code{Z} is a satin object with daily chlorophyll a concentration data for several years. In order to calculate quarterly anomalies, we will need first to obtain \code{X <- satinMean(Z, "\%Y-\%qtr")} and \code{Y <- satinMean(Z, "\%qtr")}.
+In principle, anomalies can be calculated for other ocean variables and time periods, but is up to the user to determine if that makes sense.  For example, let say that \code{Z} is a satin object with daily chlorophyll-a concentration data for several years.  In order to calculate quarterly anomalies, we will need first to obtain \code{X <- satinMean(Z, "\%Y-\%qtr")} and \code{Y <- satinMean(Z, "\%qtr")}.
 }
 \value{
- An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates the calculated anomalies. An extra element (\code{labels}) is included in the slot \code{attribs} to identify the time period of the anomalies.
+ An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates the calculated anomalies.  An extra element (\code{labels}) is included in the slot \code{attribs} to identify the time period of the anomalies.
 }
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez
@@ -50,7 +50,7 @@ sst.ym <- satinMean(sst, by="\%Y-\%m")
 # monthly sea surface temperature anomalies
 anom <- anomaly(X = sst.ym, Y = sst.m)
 
-# the dimensions of the \code{data} slots in sst.ym and anom are the same.
+# the dimensions of the data slots in sst.ym and anom are the same.
 dim(sst.ym@data); dim(anom@data)
 
 # plots

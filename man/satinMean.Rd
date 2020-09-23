@@ -5,7 +5,7 @@
 Averaging ocean data by time period
 }
 \description{
-This function allows to average ocean data by a selected time period. For example, from daily data, the user may want to obtain weekly, monthly, quarterly or even yearly averages. 
+This function allows to average ocean data by a selected time period.  For example, from daily data, the user may want to obtain weekly, monthly, quarterly or even yearly averages. 
 }
 \usage{
 satinMean(X, by = "\%m", depth = NULL)
@@ -23,13 +23,11 @@ satinMean(X, by = "\%m", depth = NULL)
 }
 }
 \details{
-Accepted strings in \code{by} follow the notation of conversion specifications described in \code{\link{strptime}}. Currently implemented:  \code{"\%Y"}, \code{"\%m"}, \code{"\%Y-\%m"}, \code{"\%j"}, \code{"\%qtr"}, \code{"\%Y-\%qtr"}, \code{"\%sem"}, \code{"\%Y-\%sem"}, \code{"\%U"}, \code{"\%V"}, \code{"\%W"}, \code{"\%Y-\%U"}, \code{"\%Y-\%V"},  \code{"\%Y-\%W"}. This includes two non-standard strings and their combinations with year: \code{"\%qtr"}, and \code{"\%sem"}, for quarter and semester, respectively, which are passed to lubridate's functions of the same names. 
-
-This function is meant to be used in combination with \code{\link{anomaly}} to obtain anomalies with respect to an average period.
+Accepted strings in \code{by} follow the notation of conversion specifications described in \code{\link{strptime}}.  Currently implemented:  \code{"\%Y"}, \code{"\%m"}, \code{"\%Y-\%m"}, \code{"\%j"}, \code{"\%qtr"}, \code{"\%Y-\%qtr"}, \code{"\%sem"}, \code{"\%Y-\%sem"}, \code{"\%U"}, \code{"\%V"}, \code{"\%W"}, \code{"\%Y-\%U"}, \code{"\%Y-\%V"},  \code{"\%Y-\%W"}.  This includes two non-standard strings and their combinations with year: \code{"\%qtr"}, and \code{"\%sem"}, for quarter and semester, respectively, which are passed to lubridate's functions of the same names.  This function is meant to be used in combination with \code{\link{anomaly}} to obtain anomalies with respect to an average period.
 }
 
 \value{
- An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates averages by time period. An extra element (\code{labels}) is included in the slot \code{attribs} to identify the time period used for the averages.
+ An object of  class \code{"satin"} (see \code{\link{satin-class}} for details) where the third dimension in the data array accomodates averages by time period.  An extra element (\code{labels}) is included in the slot \code{attribs} to identify the time period used for the averages.
 }
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez

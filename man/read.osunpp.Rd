@@ -2,10 +2,10 @@
 \alias{read.osunpp}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
- Read ocean productivity data from Oregon State University files
+Read ocean productivity data from Oregon State University files
 }
 \description{
- Read, for a user defined area, net primary production data from hdf files downloaded from OSU's Ocean Productivity home page.
+Read, for a user defined area, net primary production data from hdf files downloaded from OSU's Ocean Productivity home page.
 }
 \usage{
 read.osunpp(h5, lons, lats)
@@ -17,7 +17,7 @@ read.osunpp(h5, lons, lats)
   \item{lats}{ a vector with southern- and northern-most  latitudes. }
 }
 \details{
- This function reads Oregon State University ocean productivity data files (\url{http://www.science.oregonstate.edu/ocean.productivity/standard.product.php}). However, downloaded files should be first converted from hdf version 4 to version 5 with h4h5tools (\url{https://portal.hdfgroup.org/display/support/Download+h4h5tools}). The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively.  
+This function reads Oregon State University ocean productivity data files (\url{http://www.science.oregonstate.edu/ocean.productivity/standard.product.php}).  However, downloaded files should be first converted from hdf version 4 to version 5 with h4h5tools (\url{https://portal.hdfgroup.org/display/support/Download+h4h5tools}).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively.  
 }
 \value{
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.
@@ -26,7 +26,7 @@ read.osunpp(h5, lons, lats)
 Héctor Villalobos and Eduardo González-Rodríguez
 }
 \seealso{
-\code{\link{read.nasaoc}} for reading NASA's oceancolor web page data, \code{\link{read.ghrsst}} for JPL MUR SST data, and \code{\link{read.cmems}} for data from Copernicus Marine Environment Monitoring Service.
+\code{\link{read.nasaoc}} for reading NASA's oceancolor web page data, \code{\link{read.ghrsst}} for JPL MUR SST data, and \code{\link{read.cmems}} for data from Copernicus Marine Service.
 }
 \examples{
 \dontrun{
