@@ -17,13 +17,13 @@ read.ghrsst(nc, lons, lats)
   \item{lats}{ a vector with southern- and northern-most  latitudes. }
 }
 \details{
-This function can read SST data from one or multiple netCDF files downloaded from Caltech Jet Propulsion Laboratory web page (\url{https://podaac-opendap.jpl.nasa.gov/opendap/allData/ghrsst/data/GDS2/L4/GLOB/JPL/MUR/v4.1/}).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively. 
+This function can read SST data from one or multiple netCDF files downloaded from Caltech Jet Propulsion Laboratory web page (\url{ https://podaac-opendap.jpl.nasa.gov/opendap/allData/ghrsst/data/GDS2/L4/GLOB/JPL/MUR/v4.1/ }).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively. 
 }
 \value{
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.
 }
 \references{
-\url{https://www.ghrsst.org/}
+\url{ https://www.ghrsst.org/ }
 }
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez
@@ -38,6 +38,7 @@ Héctor Villalobos and Eduardo González-Rodríguez
                         lats=c(20, 30), lons=c(-130, -105))
  str(sst1km)
  summary(sst1km)
+ op <- par(no.readonly = TRUE)
  plot(sst1km)
  
  # read several files residing in the working directory 
@@ -51,6 +52,7 @@ Héctor Villalobos and Eduardo González-Rodríguez
 
  # plotting the second processed file
  plot(mSST, period = 2)
+ par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

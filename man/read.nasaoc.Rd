@@ -35,6 +35,7 @@ Héctor Villalobos and Eduardo González-Rodríguez
                         lats=c(20, 30), lons=c(-130, -105))
  str(sst)
  summary(sst)
+ op <- par(no.readonly = TRUE)
  plot(sst)
 
  # read several files residing in the working directory 
@@ -48,6 +49,7 @@ Héctor Villalobos and Eduardo González-Rodríguez
 
  # plotting the second processed file
  plot(mSST, period = 2)
+ par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

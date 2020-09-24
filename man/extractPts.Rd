@@ -28,16 +28,24 @@ A data frame with at least 7 columns: For each point, a sequential \code{id} num
 \examples{
 # load data, define coordinates and extract values
 data(dsst)
+op <- par(no.readonly = TRUE)
+
 plot(dsst)
 coord <- data.frame(x = seq(-130, -114, 2), y = seq(20, 36, 2))
 values <- extractPts(dsst, points = coord)
 values
 
+par(op)
+
 # if no points are given the user can select them by clicking on the image
 \dontrun{
+op <- par(no.readonly = TRUE)
+
 plot(dsst)
 values2 <- extractPts(dsst) # *** click on the image ***
 values2
+
+par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -50,6 +50,7 @@ When \code{return.poly = TRUE}, a list with two components:
  \code{\link{getpoly}} 
 }
 \examples{
+op <- par(no.readonly = TRUE)
 # load and display sample data
 data(dsst)
 plot(dsst)
@@ -58,13 +59,17 @@ plot(dsst)
 polyg <- data.frame(x = c(-110, -105, -113, -116, -110), y = c(23, 23, 32, 32, 23))
 dsst.clip <- crop(dsst, polygon = polyg)
 plot(dsst.clip)
-
+par(op)
 \dontrun{ 
 # the same, but polygon is defined by clicking on the image
+op <- par(no.readonly = TRUE)
+
 plot(dbsst)
 dsst.clip2 <- crop(dsst, return.poly = TRUE) # *** draw the aoi polygon ***
 dsst.clip2$polygon # show polygon coordinates
 plot(dsst.clip2$aoi) # plot the selected aoi
+
+par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

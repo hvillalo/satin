@@ -22,8 +22,21 @@ function(nc)
       or <- chut[3]
     
   ti <- ncf$dim$time$vals
+  np <- length(ti)
   tmStart <- as.POSIXct(ti*fac, tz="UTC", format="%Y-%m-%d", origin=or)
   avps <- list(tmStart = tmStart, tmEnd = tmStart)
+  
+  # determine temporal range
+  if ( np > 1){
+    dt <- as.numeric(difftime(tmStart[2], tmStart[1], units="days"))
+    if(dt > 25){
+      tempRng <- "monthly"
+    } else {
+      tempRng <- "daily"
+    }
+  } else {
+    tempRng <- "unknown"
+  }
   
   # read longitudes, latitudes, and depths
   lat <- as.vector(ncf$dim$lat$vals)
@@ -33,15 +46,12 @@ function(nc)
     } else {
       flip <- FALSE
     }
+  nlat <- length(lat)
   lon <- as.vector(ncf$dim$lon$vals)
+  nlon <- length(lon)
   depth <- as.vector(ncf$dim$depth$vals)
 
-  dt <- as.numeric(difftime(tmStart[2], tmStart[1], units="days"))
-  dt <- if(dt > 25){
-    tempRng <- "monthly"
-  } else {
-    tempRng <- "daily"
-  }  
+  # determine spatial resolution
   spatRes <- round(distGeo(p1=c(lon[1], lat[1]), p2=c(lon[1], lat[2]))/1000, digits=1)
   spatRes <- paste(spatRes, "km")
   
@@ -52,17 +62,22 @@ function(nc)
   
   # process variables and depths in nc file
   for (k in 1:nv) {
+   nd <- length(depth)
    vn <- vars[k]
    VAo <- ncvar_get(ncf, vn)
-   dimvar <- dim(VAo)
-   if (length(dimvar) == 3){
+   ndim <- length(dim(VAo))
+   if (ndim == 2)
      nd <- 1
-     dim(VAo) <- c(dimvar[1:2], nd, dimvar[3])
-   }
-   ni <- dim(VAo)[4]
-   nd <- dim(VAo)[3]
-   VA <- array(NA, dim = c(length(lat), length(lon), ni, nd)) 
-   for (i in 1:ni){
+   if (ndim == 3){
+     if (np == 1){
+       nd <- dim(VAo)[3]
+     } else {
+       nd <- 1
+     }
+   }   
+   dim(VAo) <- c(nlon, nlat, nd, np)
+   VA <- array(NA, dim = c(nlat, nlon, np, nd)) 
+   for (i in 1:np){
        for (d in 1:nd){
          mat <- t(VAo[ , , d, i])
          if ( flip )

@@ -54,11 +54,13 @@ anom <- anomaly(X = sst.ym, Y = sst.m)
 dim(sst.ym@data); dim(anom@data)
 
 # plots
+op <- par(no.readonly = TRUE)
 lab <- paste(month.name, rep(2014:2018, each=12))
 for (m in 1:60){
   plot(anom, period = m, zlim=c(-10, 10), col.sep = 0.2, main = lab[m],
        scheme = c("blue", "cyan", "white", "yellow", "red"))
 }
+par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

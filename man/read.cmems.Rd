@@ -15,7 +15,7 @@ read.cmems(nc)
   \item{nc}{ name of the netCDF file to be read.}
 }
 \details{
-The function can read data from netCDF files downloaded from CMEMS web page (\url{https://marine.copernicus.eu/}).  It has been tested with Global Ocean Physical Reanalysis, and Global Ocean Biogeochemistry Hindcast databases.  When downloading Copernicus data files, the user can select one or several variables (see references below), depth levels, daily or monthly means, time and spatial coverage.  This makes every Copernicus netCDF file unique.  The \code{read.cmems} function attempts to read all the variables and depth levels at once.  When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced.  On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. 
+The function can read data from netCDF files downloaded from CMEMS web page (\url{ https://marine.copernicus.eu/ }).  It has been tested with Global Ocean Physical Reanalysis, and Global Ocean Biogeochemistry Hindcast databases.  When downloading Copernicus data files, the user can select one or several variables (see references below), depth levels, daily or monthly means, time and spatial coverage.  This makes every Copernicus netCDF file unique.  The \code{read.cmems} function attempts to read all the variables and depth levels at once.  When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced.  On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. 
 }
 
 \value{
@@ -44,6 +44,7 @@ Héctor Villalobos
  summary(cmems)
  
  # plotting the first period
+ op <- par(no.readonly = TRUE)
  plot(cmems) 
 
  # plotting the second period 
@@ -62,6 +63,7 @@ Héctor Villalobos
  thetao$depth # depth levels
  plot(thetao) # potential temperature at first depth level (0.49 m) and first month 
  plot(thetao, period = 2, depth = 5) # for fifth depth level (5.078 m), second month
+ par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

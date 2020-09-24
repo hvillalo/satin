@@ -2,7 +2,7 @@
 \alias{dcmems}
 \docType{data}
 \title{
-Copernicus Marine Environment Monitoring Service sample data
+Copernicus Marine Service sample data
 }
 \description{
 This sample data contains monthly values (November and December 2010) of sea water potential temperature (thetao, degrees C) and sea surface height (zos, m) off northwest Mexico, 1/12 degree horizontal resolution (aprox. 9.26 km).
@@ -50,7 +50,7 @@ $ thetao:Formal class 'satin' [package "satin2"] with 6 slots
 Source data file was downloaded from the link below, then imported with the \code{\link{read.cmems}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.  Potential temperature includes five depth levels (0.494, 9.573, 29.445, 92.326, 318.127).
 }
 \source{
-  \url{https://marine.copernicus.eu/}
+  \url{ https://marine.copernicus.eu/ }
 }
 \references{
 Fernandez, E. and Lellouche, J. M. 2018 \emph{Product Manual for the Global Ocean Physical Reanalysis product, issue 1.1}. EU Copernicus Marine Service.
@@ -58,6 +58,7 @@ Fernandez, E. and Lellouche, J. M. 2018 \emph{Product Manual for the Global Ocea
 \examples{
 data(dcmems)
 str(dcmems)
+op <- par(no.readonly = TRUE)
 plot(dcmems$thetao)
 
 # potential temperature at 318 m
@@ -65,5 +66,6 @@ plot(dcmems$thetao, depth = 5)
 
 # sea surface height
 plot(dcmems$zos) 
+par(op)
 }
 \keyword{datasets}

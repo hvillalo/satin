@@ -51,6 +51,7 @@ Usage and behavior of this function closely resembles that of \code{plot.satin}.
 oc <- read.cmems("global-reanalysis-phy-001-030-daily_1560792767602_GC_2013-14.nc")
 
 # Default plot
+op <- par(no.readonly = TRUE)
 quiver(u = oc$uo, v = oc$vo)
 
 # Using default colors for the arrows, color bar and reference arrow
@@ -68,6 +69,7 @@ plot(oc$thetao, map = dmap, xlim = c(-112, -108), ylim = c(24, 28))
 quiver(u = oc$uo, v = oc$vo, colarrow = TRUE, colbar = FALSE, 
        ra.pos = c(-108.5, 27), ra.speed = 0.15, main="", 
        length=0.02, scale = 0.7, add2map = TRUE)	   
+par(op)
 }
 }
 \keyword{ hplot }

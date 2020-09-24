@@ -28,7 +28,9 @@ data(dcmems)
 # available variables
 names(dcmems)
 # plot potential temperature
+op <- par(no.readonly = TRUE)
 plot(dcmems$thetao)
+par(op)
 # define point for extracting and plotting vertical profile
 pt <- data.frame(lon=-108.5, lat=23.33)
 vp <- verticalProfiles(dcmems$thetao, point = pt)

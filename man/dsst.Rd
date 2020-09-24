@@ -31,16 +31,18 @@ Formal class 'satin' [package "satin2"] with 6 slots
 Source data file (A20130892013096.L3m_8D_SST4_sst4_4km.nc) was downloaded from the link below, then imported with the \code{\link{read.nasaoc}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
 }
 \source{
-  \url{https://oceancolor.gsfc.nasa.gov/cgi/l3}
+  \url{ https://oceancolor.gsfc.nasa.gov/cgi/l3 }
 }
 \references{
-  \url{https://oceancolor.gsfc.nasa.gov/docs/technical/}
+  \url{ https://oceancolor.gsfc.nasa.gov/docs/technical/ }
 }
 \examples{
 data(dsst)
 str(dsst)
 summary(dsst)
+op <- par(no.readonly = TRUE)
 plot(dsst)
+par(op)
 }
 \keyword{datasets}
 
