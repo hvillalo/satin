@@ -34,10 +34,8 @@ head(X)
 
 # reverse the operation
 Y <- satinDataframe(X, reverse = TRUE)
-str(Y)
-op <- par(no.readonly = TRUE)
+Y
 plot(Y)
-par(op)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

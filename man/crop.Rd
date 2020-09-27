@@ -23,7 +23,7 @@ crop(X, polygon = NULL, return.poly = FALSE)
 }
 }
 \details{
-If provided, the polygon defining the aoi must have two columns with x and y coordinates.  The function verifies that the last point is exactly the same as the first one.  When not specified, the user can draw a polygon by clicking on a previously displayed image.  The result is a satin object where the pixels outside the aoi are set to NA.  In order to cut Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be previously done.
+If provided, the polygon defining the aoi must have two columns with x and y coordinates.  The function verifies that the last point is exactly the same as the first one.  When not specified, the user can draw a polygon by clicking on a previously displayed image.  Note that for drawing the polygon in this manner, the plot of the satin object has to be created using \code{colbar = FALSE}.  The result is a satin object where the pixels outside the aoi are set to NA.  In order to cut Copernicus data returned from \code{\link{read.cmems}}, the appropriate indexing should be previously done.
 }
 \value{
 A cutted satin object.
@@ -31,26 +31,14 @@ A cutted satin object.
 When \code{return.poly = TRUE}, a list with two components:
  \item{aoi}{cutted satin object.}
  \item{polygon}{polygon coordinates defining the aoi.}
-
 }
-
-%\references{
-%% ~put references to the literature/web site here ~
-%}
 \author{
  Héctor Villalobos
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
  \code{\link{getpoly}} 
 }
 \examples{
-op <- par(no.readonly = TRUE)
 # load and display sample data
 data(dsst)
 plot(dsst)
@@ -59,17 +47,13 @@ plot(dsst)
 polyg <- data.frame(x = c(-110, -105, -113, -116, -110), y = c(23, 23, 32, 32, 23))
 dsst.clip <- crop(dsst, polygon = polyg)
 plot(dsst.clip)
-par(op)
-\dontrun{ 
-# the same, but polygon is defined by clicking on the image
-op <- par(no.readonly = TRUE)
 
-plot(dbsst)
+if(interactive()){ 
+# the same, but polygon is defined by clicking on the image
+plot(dsst, colbar = FALSE)
 dsst.clip2 <- crop(dsst, return.poly = TRUE) # *** draw the aoi polygon ***
 dsst.clip2$polygon # show polygon coordinates
 plot(dsst.clip2$aoi) # plot the selected aoi
-
-par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -32,19 +32,17 @@ Accepted strings in \code{by} follow the notation of conversion specifications d
 \author{
 Héctor Villalobos and Eduardo González-Rodríguez
 }
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{anomaly}} for calculating anomalies of ocean data, and \code{\link{climatology}} for climatologies.
 }
 \examples{
-\dontrun{
-sst.ym <- satinMean(sst, by="\%Y-\%m") # sst is a satin object with 240 weekly
-                                   # images, totalling five years of data.
+if(interactive()){
+sst.ym <- satinMean(sst, by = "\%Y-\%m") # sst is a satin object with 240 weekly
+                                         # images, totalling five years of data.
 
 sst.ym # this will have 60 time periods, one for every month and year.
 
-sst.m <- satinMean(sst, by="\%m") # this will produce 12 monthly periods
+sst.m <- satinMean(sst, by = "\%m") # this will produce 12 monthly periods
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

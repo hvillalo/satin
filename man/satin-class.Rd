@@ -36,7 +36,7 @@ See \code{\link{read.nasaoc}}; \code{\link{read.osunpp}}; \code{\link{read.ghrss
 \examples{
 data(dsst)
 class(dsst)
-str(dsst)
 dsst
+str(dsst)
 }
 \keyword{classes}

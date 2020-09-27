@@ -27,13 +27,11 @@ The main interest of this function is to obtain smooth isolines for ocean data (
 \examples{
 # load and plot sample SST data 
 data(dsst)
-op <- par(no.readonly = TRUE)
 plot(dsst)
 
 # change spatial resolution to 0.5 degrees
 sst0.5 <- pixelate(dsst, extent = 0.5) 
 plot(sst0.5)
-par(op)
 }
 
 \keyword{ array }

@@ -37,14 +37,13 @@ Héctor Villalobos
 \code{\link{read.nasaoc}} for reading NASA's oceancolor web page data,  \code{\link{read.ghrsst}} for JPL MUR SST data, and \code{\link{read.osunpp}} for reading ocean productivity data.
 }
 \examples{
-\dontrun{
+if(interactive()){
  # read Copernicus netcdf file with one variable
  cmems <- read.cmems("global-reanalysis-phy-001-030-monthly_1553098099635.nc")
+ cmems
  str(cmems)
- summary(cmems)
  
  # plotting the first period
- op <- par(no.readonly = TRUE)
  plot(cmems) 
 
  # plotting the second period 
@@ -52,18 +51,17 @@ Héctor Villalobos
 
  # read Copernicus netCDF file with several variables and depth levels
  cmems2 <- read.cmems("global-reanalysis-phy-001-030-monthly_1553051256930.nc")      
- str(cmems2) # it is a list
+ cmems2 # it is a list
  
  # readed variables
  names(cmems2)
  
  # example plots for potential temperature
  thetao <- cmems2$thetao
- summary(thetao)
+ thetao
  thetao$depth # depth levels
  plot(thetao) # potential temperature at first depth level (0.49 m) and first month 
  plot(thetao, period = 2, depth = 5) # for fifth depth level (5.078 m), second month
- par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

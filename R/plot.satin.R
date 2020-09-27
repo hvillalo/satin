@@ -42,8 +42,8 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   if (colbar == TRUE){
     if ( missing(units) )
      units <- X@attribs$units
-    #op <- par(no.readonly = TRUE)  
-    #on.exit(par(op))
+    op <- par(no.readonly = TRUE)  
+    on.exit(par(op))
     layout( matrix(c(2, 1), ncol = 2), widths = c(8/10, 1/5), heights = c(1, 1) )
     par(mar = c(5.1, 0.1, 4.1, 4))
     satin2::imageScale(z = t(z[nrow(z):1, ]), col = cbp, breaks = cbb, axis.pos = 4, las = 2, log = log)

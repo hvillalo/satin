@@ -32,13 +32,12 @@ Héctor Villalobos and Eduardo González-Rodríguez
 \code{\link{read.nasaoc}} for reading NASA's oceancolor web page data, \code{\link{read.osunpp}} for reading ocean productivity data, and \code{\link{read.cmems}} for data from Copernicus Marine Service.
 }
 \examples{
-\dontrun{
+if(interactive()){
  # read a single file, look at its structure and plot
  sst1km <- read.nasaoc("20130101090000-JPL-L4_GHRSST-SSTfnd-MUR-GLOB-v02.0-fv04.1.nc", 
                         lats=c(20, 30), lons=c(-130, -105))
+ sst1km
  str(sst1km)
- summary(sst1km)
- op <- par(no.readonly = TRUE)
  plot(sst1km)
  
  # read several files residing in the working directory 
@@ -52,7 +51,6 @@ Héctor Villalobos and Eduardo González-Rodríguez
 
  # plotting the second processed file
  plot(mSST, period = 2)
- par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

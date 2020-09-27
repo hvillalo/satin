@@ -37,7 +37,7 @@ Héctor Villalobos and Eduardo González-Rodríguez
 \code{\link{satinMean}} for calculating ocean data averages needed, and \code{\link{climatology}} for climatologies.
 }
 \examples{
-\dontrun{
+if(interactive()){
 # Calculate monthly sea surface temperature from weekly data.
 # sst contains 240 weekly images for five years.
 
@@ -53,14 +53,12 @@ anom <- anomaly(X = sst.ym, Y = sst.m)
 # the dimensions of the data slots in sst.ym and anom are the same.
 dim(sst.ym@data); dim(anom@data)
 
-# plots
-op <- par(no.readonly = TRUE)
+# plots of the first 24 months
 lab <- paste(month.name, rep(2014:2018, each=12))
-for (m in 1:60){
+for (m in 1:24){
   plot(anom, period = m, zlim=c(-10, 10), col.sep = 0.2, main = lab[m],
        scheme = c("blue", "cyan", "white", "yellow", "red"))
 }
-par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

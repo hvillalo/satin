@@ -19,8 +19,8 @@ function(X, depth = NULL)
   clim[, , 1] <- sumpix/dim(z)[3] * 100 # percent coverage
   clim[, , 2] <- apply(z, MARGIN=c(1, 2), "mean", na.rm=TRUE )
   clim[, , 3] <- apply(z, MARGIN=c(1, 2), "sd", na.rm=TRUE )   
-  clim[, , 4] <- apply(z, MARGIN=c(1, 2), "min", na.rm=TRUE )
-  clim[, , 5] <- apply(z, MARGIN=c(1, 2), "max", na.rm=TRUE )
+  clim[, , 4] <- suppressWarnings(apply(z, MARGIN=c(1, 2), "min", na.rm=TRUE))
+  clim[, , 5] <- suppressWarnings(apply(z, MARGIN=c(1, 2), "max", na.rm=TRUE))
   for (i in 2:5)
     clim[, , i][clim[, , 1] == 0] <- NA
   pFr <- format(X@period$tmStart[1], "%Y-%m-%d")

@@ -17,7 +17,7 @@ extractPts(X, points = NULL)
 \item{points}{ a data frame with point(s) longitude and latitude coordinates where to extract data values. }
 }
 \details{
-If provided, \code{points} must have two columns with x and y coordinates.  When not specified, \code{points} can be  selected by clicking on the image. 
+If provided, \code{points} must have two columns with x and y coordinates.  When not specified, \code{points} can be  selected by clicking on the image.  Note that for selecting the points in this manner, the plot of the satin object has to be created using \code{colbar = FALSE}.
 }
 \value{
 A data frame with at least 7 columns: For each point, a sequential \code{id} number; (\code{x, y}) coordinates, either specified via the \code{points} argument or selected by clicking on the image; (\code{lon} and \code{lat}) coordinates of pixels closer to the desired points; and for quality control purposes, the distance between them (\code{d}, km).  The remaining column(s) are the parameter values for every image in the satin object.
@@ -28,24 +28,17 @@ A data frame with at least 7 columns: For each point, a sequential \code{id} num
 \examples{
 # load data, define coordinates and extract values
 data(dsst)
-op <- par(no.readonly = TRUE)
 
 plot(dsst)
 coord <- data.frame(x = seq(-130, -114, 2), y = seq(20, 36, 2))
 values <- extractPts(dsst, points = coord)
 values
 
-par(op)
-
 # if no points are given the user can select them by clicking on the image
-\dontrun{
-op <- par(no.readonly = TRUE)
-
-plot(dsst)
+if (interactive()){
+plot(dsst, colbar = FALSE)
 values2 <- extractPts(dsst) # *** click on the image ***
 values2
-
-par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

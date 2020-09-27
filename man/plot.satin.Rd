@@ -60,9 +60,10 @@ The only mandatory argument for this function to produce a map is an object of c
 library(sp)
 data(dsst, dmap) #load sample data and map
 
-op <- par(no.readonly = TRUE)
+# default plot
 plot(dsst)
-#adding a custom map
+
+# adding a custom map
 plot(dsst, map = dmap)
 
 # Chl-a concentration data (Aqua Modis) in actual units and in logarithmic scale
@@ -74,8 +75,6 @@ plot(dchl, map = dmap, xlim = c(-120, -105), ylim = c(20, 35), log = TRUE)
 # Copernicus data
 data(dcmems)
 plot(dcmems$thetao, map = dmap, period = 2, depth = 5)
-
-par(op)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

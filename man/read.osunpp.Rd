@@ -29,13 +29,12 @@ Héctor Villalobos and Eduardo González-Rodríguez
 \code{\link{read.nasaoc}} for reading NASA's oceancolor web page data, \code{\link{read.ghrsst}} for JPL MUR SST data, and \code{\link{read.cmems}} for data from Copernicus Marine Service.
 }
 \examples{
-\dontrun{
+if(interactive()){
  # read a single file, look at its structure and plot
  npp <- read.osunpp("vgpm.2013089.h5", 
                         lats=c(20, 30), lons=c(-130, -105))
+ npp
  str(npp)
- summary(npp)
- op <- par(no.readonly = TRUE)
  plot(npp)
 
  # read several files residing in the working directory 
@@ -49,7 +48,6 @@ Héctor Villalobos and Eduardo González-Rodríguez
 
  # plotting the second processed file
  plot(mNPP, period = 2)
- par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

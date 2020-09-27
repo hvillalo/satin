@@ -38,14 +38,13 @@ Source data file (A20130892013096.L3m_8D_CHL_chlor_a_4km.nc) was downloaded from
 }
 \examples{
 data(dchl)
+dchl
 str(dchl)
-summary(dchl)
-op <- par(no.readonly = TRUE)
+
 plot(dchl)
 
 # plot with logarithmic scale
 plot(dchl, log = TRUE)
-par(op)
 }
 \keyword{datasets}
 

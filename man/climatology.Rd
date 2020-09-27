@@ -27,12 +27,11 @@ For Copernicus data files containing more than one variable, the \code{\link{rea
 Héctor Villalobos and Eduardo González-Rodríguez
 }
 \examples{
-\dontrun{
+if(interactive()){
 csst <- climatology(sst) # sst is a satin object with 12 monthly images 
                          # of sea surface temperature
 
 # -- plots --
-op <- par(no.readonly = TRUE)
 
 # coverage
 plot(csst, period = 1)
@@ -48,8 +47,9 @@ plot(csst, period = 4)
 
 # maximum
 plot(csst, period = 5)
-
+}
 # For Copernicus data
+\donttest{
 data(dcmems) # load sample data
 names(dcmems) # available variables 
 
@@ -61,8 +61,6 @@ plot(cthetao1, period = 2, main = cthetao1@period$label[2])
 # standard deviation of thetao at 318 m
 cthetao2 <- climatology(dcmems$thetao, depth = 5)
 plot(cthetao2, period = 3, main = cthetao1@period$label[3])
-
-par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

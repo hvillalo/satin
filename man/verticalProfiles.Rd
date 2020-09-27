@@ -22,17 +22,20 @@ verticalProfiles(X, point = NULL, xlim = NULL, ylim = NULL)
 \details{
 Selected Copernicus data should be available at several depths, otherwise is meaningless.  Also, if more than one point is selected, only the first will be processed.
 }
+\author{
+Héctor Villalobos
+}
 \examples{
 # load sample Copernicus data
 data(dcmems)
 # available variables
 names(dcmems)
+
 # plot potential temperature
-op <- par(no.readonly = TRUE)
 plot(dcmems$thetao)
-par(op)
+
 # define point for extracting and plotting vertical profile
-pt <- data.frame(lon=-108.5, lat=23.33)
+pt <- data.frame(lon = -108.5, lat = 23.33)
 vp <- verticalProfiles(dcmems$thetao, point = pt)
 # inspect extracted data
 vp

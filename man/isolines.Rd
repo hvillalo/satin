@@ -32,12 +32,10 @@ library(PBSmapping)
 data(dsst)
 
 # spatial re-scaling of the sst data for smoother isotherms
-op <- par(no.readonly = TRUE)
 sst <- pixelate(dsst, extent = 0.2) 
 isotherms <- isolines(sst, levels = c(13, 17, 21))
-plot(dsst)
+plot(dsst, colbar = FALSE)
 addLines(isotherms$PolySet, col = "black", lwd = 1.5)
-par(op)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

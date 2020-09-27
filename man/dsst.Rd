@@ -38,11 +38,9 @@ Source data file (A20130892013096.L3m_8D_SST4_sst4_4km.nc) was downloaded from t
 }
 \examples{
 data(dsst)
+dsst
 str(dsst)
-summary(dsst)
-op <- par(no.readonly = TRUE)
 plot(dsst)
-par(op)
 }
 \keyword{datasets}
 

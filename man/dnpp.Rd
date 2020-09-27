@@ -38,11 +38,9 @@ Behrenfeld, M. J. and Falkowski, P. G. 1997 Photosynthetic rates derived from sa
 }
 \examples{
 data(dnpp)
+dnpp
 str(dnpp)
-summary(dnpp)
-op <- par(no.readonly = TRUE)
 plot(dnpp, col.sep = 100)
-par(op)
 }
 \keyword{datasets}
 

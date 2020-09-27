@@ -17,7 +17,7 @@ read.nasaoc(nc, lons, lats)
   \item{lats}{ a vector with southern- and northern-most  latitudes. }
 }
 \details{
-This function can read data from one or multiple netCDF files downloaded from NASA's oceancolor web page (\url{https://oceancolor.gsfc.nasa.gov/l3/}).  It has been tested mainly with sea surface temperature and chlorophyll concentration data from MODIS-Aqua and SeaWiFS sensors.  It also works with Pathfinder AVHRR files v 5.2 and 5.3 (\url{https://data.nodc.noaa.gov/pathfinder/Version5.3/L3C/}).  The user must specify the minimum and maximum longitude and latitude limits within the interval (-180, 180) and (-90,  90) respectively. 
+This function can read data from one or multiple netCDF files downloaded from NASA's oceancolor web page (\url{ https://oceancolor.gsfc.nasa.gov/l3/ }).  It has been tested mainly with sea surface temperature and chlorophyll concentration data from MODIS-Aqua and SeaWiFS sensors.  It also works with Pathfinder AVHRR files v 5.2 and 5.3 (\url{ https://www.ncei.noaa.gov/products/avhrr-pathfinder-sst }).  The user must specify the minimum and maximum longitude and latitude limits within the interval (-180, 180) and (-90,  90) respectively. 
 }
 \value{
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.
@@ -29,13 +29,12 @@ Héctor Villalobos and Eduardo González-Rodríguez
 \code{\link{read.ghrsst}} for JPL MUR SST data, \code{\link{read.osunpp}} for reading ocean productivity data, and \code{\link{read.cmems}} for data from Copernicus Marine Service.
 }
 \examples{
-\dontrun{
- # read a single file, look at its structure and plot
+if(interactive()){
+ # read a single file, look at it and plot
  sst <- read.nasaoc("A20130892013096.L3m_8D_SST4_sst4_4km.nc", 
                         lats=c(20, 30), lons=c(-130, -105))
+ sst
  str(sst)
- summary(sst)
- op <- par(no.readonly = TRUE)
  plot(sst)
 
  # read several files residing in the working directory 
@@ -49,7 +48,6 @@ Héctor Villalobos and Eduardo González-Rodríguez
 
  # plotting the second processed file
  plot(mSST, period = 2)
- par(op)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
