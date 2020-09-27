@@ -9,7 +9,7 @@ Ocean Net Primary Production (8-day average; 9.26 km resolution) from March 30 t
 }
 \usage{data("dnpp")}
 \format{
-Formal class 'satin' [package "satin2"] with 6 slots
+Formal class 'satin' [package "satin"] with 6 slots
 \tabular{ll}{
   ..@ lon  \tab  : num [1:180] -119 -119 -119 -119 -119 ...\cr
   ..@ lat  \tab  : num [1:180] 20.1 20.1 20.2 20.3 20.4 ...\cr

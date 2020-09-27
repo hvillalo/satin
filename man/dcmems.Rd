@@ -11,7 +11,7 @@ This sample data contains monthly values (November and December 2010) of sea wat
 \usage{data("dcmems")}
 \format{
 List of 2\cr
-$ thetao:Formal class 'satin' [package "satin2"] with 6 slots
+$ thetao:Formal class 'satin' [package "satin"] with 6 slots
 \tabular{ll}{ 
   .. ..@ lon \tab   : num [1:181] -119 -119 -119 -119 -119 ...\cr
   .. ..@ lat \tab   : num [1:169] 20 20.1 20.2 20.2 20.3 ...\cr
@@ -28,7 +28,7 @@ $ thetao:Formal class 'satin' [package "satin2"] with 6 slots
   .. .. ..$ tmEnd  \tab : POSIXct[1:2], format: "2010-11-16 00:00:00" ...\cr
   .. ..@ depth  \tab  : num [1:5] 0.494 9.573 29.445 92.326 318.127
   }
- $ zos   :Formal class 'satin' [package "satin2"] with 6 slots
+ $ zos   :Formal class 'satin' [package "satin"] with 6 slots
 \tabular{ll}{  
   .. ..@ lon  \tab  : num [1:181] -119 -119 -119 -119 -119 ...\cr
   .. ..@ lat  \tab  : num [1:169] 20 20.1 20.2 20.2 20.3 ...\cr

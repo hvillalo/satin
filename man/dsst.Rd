@@ -9,7 +9,7 @@ Sea Surface Temperature (4 um nighttime; 8-day average; 4 km resolution) from Ma
 }
 \usage{data("dsst")}
 \format{
-Formal class 'satin' [package "satin2"] with 6 slots
+Formal class 'satin' [package "satin"] with 6 slots
 \tabular{ll}{
   ..@ lon \tab   : num [1:360] -119 -119 -119 -119 -119 ...\cr
   ..@ lat \tab   : num [1:360] 20 20.1 20.1 20.1 20.2 ...\cr
