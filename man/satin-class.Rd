@@ -3,7 +3,8 @@
 \docType{class}
 \alias{satin-class}
 \alias{satin}
-\alias{summary,satin-method}
+\alias{print.satin}
+\alias{show,satin-method}
 \title{Class "satin"}
 \description{
 class for ocean data derived from satellites, imported from netCDF files.
@@ -25,7 +26,7 @@ Objects of class \code{"satin"} are created by importing functions: \code{read.n
   \describe{
     \item{plot}{\code{signature(x = "satin", y = "missing")}: plot method for \code{"satin"} objects. See details in \code{plot.satin}}
     \item{show}{\code{signature(object = "satin")}: display a summary of the object. See example below}
-	 }
+  }
 }
 \author{
 Héctor Villalobos

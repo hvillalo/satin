@@ -38,37 +38,39 @@ setValidity("satin", method =
     }
 )
 
-setMethod("show", "satin", function(object){
-  x <- list()
-  x[["class"]] <- class(object)
-  x[["attribs"]] <- object@attribs
-  x[["dims"]] <- dim(object@data)
-  vn <- object@attribs$name
-  rng.lon <- range(object@lon)
-  rng.lat <- range(object@lat)
-  rng.data <- c(range(as.vector(object@data), na.rm=TRUE))
-  rng.per <- c(format(min(object@period$tmStart), "%Y-%m-%d"), 
-               format(max(object@period$tmEnd), "%Y-%m-%d"))
+"print.satin" <- function(x, ...){
+  X <- list()
+  X[["class"]] <- class(x)
+  X[["attribs"]] <- x@attribs
+  X[["dims"]] <- dim(x@data)
+  vn <- x@attribs$name
+  rng.lon <- range(x@lon)
+  rng.lat <- range(x@lat)
+  rng.data <- c(range(as.vector(x@data), na.rm=TRUE))
+  rng.per <- c(format(min(x@period$tmStart), "%Y-%m-%d"), 
+               format(max(x@period$tmEnd), "%Y-%m-%d"))
   ans <- data.frame(lon=rng.lon, lat=rng.lat, rng.data, period=rng.per)
   row.names(ans) <- c("min", "max")
   names(ans)[3] <- vn
-  if (length(object@depth) > 0){
-    rng.dep <- range(object@depth)
+  if (length(x@depth) > 0){
+    rng.dep <- range(x@depth)
     ans$depth <- rng.dep
   }
-  x[["ans"]] <- ans
+  X[["ans"]] <- ans
   
-  cat(paste("Object of class ", x[["class"]], "\n", sep = ""))
-  cat("\n", "Title:", unlist(x[["attribs"]])[1], "\n", "Long name:", 
-      unlist(x[["attribs"]])[2], "\n", "Name:", unlist(x[["attribs"]])[3], 
-      "\n", "Units:", unlist(x[["attribs"]])[4], "\n",
-      "Temporal range:", unlist(x[["attribs"]])[5], "\n",
-      "Spatial resolution:", unlist(x[["attribs"]])[6], "\n")
-  cat("\nData dimensions:\n", x[["dims"]], "\n")
+  cat(paste("Object of class ", X[["class"]], "\n", sep = ""))
+  cat("\n", "Title:", unlist(X[["attribs"]])[1], "\n", "Long name:", 
+      unlist(X[["attribs"]])[2], "\n", "Name:", unlist(X[["attribs"]])[3], 
+      "\n", "Units:", unlist(X[["attribs"]])[4], "\n",
+      "Temporal range:", unlist(X[["attribs"]])[5], "\n",
+      "Spatial resolution:", unlist(X[["attribs"]])[6], "\n")
+  cat("\nData dimensions:\n", X[["dims"]], "\n")
   cat("\nData ranges:\n")
-  print(x[["ans"]])
-  invisible(x)
-})
+  print(X[["ans"]])
+  invisible(X)
+}
+
+setMethod("show", "satin", function(object) print.satin(object))
 
 if (!isGeneric("plot"))
   setGeneric("plot", function(x, y, ...)
