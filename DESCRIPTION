@@ -1,7 +1,7 @@
 Package: satin
 Type: Package
 Title: Visualisation and Analysis of Ocean Data Derived from Satellites
-Version: 1.0
+Version: 1.0.1
 Date: 2020-09-26
 Encoding: UTF-8
 Author: Héctor Villalobos and Eduardo González-Rodríguez <egonzale@cicese.mx>

@@ -45,8 +45,14 @@ function(h5, lons, lats)
       stop(paste("type of variable is different in at least one file:", vname, vn))
 
    # time coverage
-   tst <- ncatt_get(ncf, varid=0)$'Start Time String_GLOSDS'
-   ten <- ncatt_get(ncf, varid=0)$'Stop Time String_GLOSDS'
+   nm <- names(ncatt_get(ncf, varid=0))
+   statvn <- nm[grep("^Start Time String", nm)]
+   stotvn <- nm[grep("^Stop Time String", nm)]
+   tst <- ncatt_get( ncf, varid=0)[[statvn]]  
+   ten <- ncatt_get( ncf, varid=0)[[stotvn]]  
+   
+   #tst <- ncatt_get(ncf, varid=0)$'Start Time String_GLOSDS'
+   #ten <- ncatt_get(ncf, varid=0)$'Stop Time String_GLOSDS'
      tst <- as.POSIXct(tst, format = "%m/%d/%Y %H:%M:%S", tz = "UTC")
      ten <- as.POSIXct(ten, format = "%m/%d/%Y %H:%M:%S", tz = "UTC")
     tmStart[h] <- tst
