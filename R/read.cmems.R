@@ -9,21 +9,21 @@ function(nc)
   
   # Processing dates
   chut <- ncf$dim$time$units
-  chut <-  unlist(strsplit(  chut, " "))
+    chut <-  unlist(strsplit(  chut, " "))
     ut <- chut[1]
-    if ( ut %in% c("hour", "hours") ) {
-      fac <- 60*60
-    } else {
-      fac <- 1
-    }  
-    if ( length(chut) > 3)
-      or <- paste(chut[3], chut[4])
-    if ( length(chut) == 3)
-      or <- chut[3]
-    
   ti <- ncf$dim$time$vals
+  if (ut == "days")
+    ti <- ti * 24 * 60 *60
+  if (ut %in% c("hour", "hours"))  
+    ti <- ti * 60 * 60
+  # origin
+  if ( length(chut) > 3)
+    or <- paste(chut[3], chut[4])
+  if ( length(chut) == 3)
+    or <- chut[3]
+  
   np <- length(ti)
-  tmStart <- as.POSIXct(ti*fac, tz="UTC", format="%Y-%m-%d", origin=or)
+  tmStart <- as.POSIXct(ti, tz="UTC", format="%Y-%m-%d", origin=or)
   avps <- list(tmStart = tmStart, tmEnd = tmStart)
   
   # determine temporal range
