@@ -8,14 +8,15 @@ function(nc)
   ncf <- nc_open(nc)
   
   # Processing dates
+  # factors for converting time to seconds
+  tf <- data.frame(ut = c("seconds", "hour", "hours", "days"), 
+                   fc = c(1, 60*60, 60*60, 24*60*60))
   chut <- ncf$dim$time$units
-    chut <-  unlist(strsplit(  chut, " "))
+    chut <-  unlist(strsplit(chut, " "))
     ut <- chut[1]
   ti <- ncf$dim$time$vals
-  if (ut == "days")
-    ti <- ti * 24 * 60 *60
-  if (ut %in% c("hour", "hours"))  
-    ti <- ti * 60 * 60
+  fc <- tf$fc[tf$ut == ut]
+  ti <- ti * fc
   # origin
   if ( length(chut) > 3)
     or <- paste(chut[3], chut[4])
@@ -29,7 +30,7 @@ function(nc)
   # determine temporal range
   if ( np > 1){
     dt <- as.numeric(difftime(tmStart[2], tmStart[1], units="days"))
-    if(dt > 25){
+    if(dt > 27){
       tempRng <- "monthly"
     } else {
       tempRng <- "daily"
@@ -48,9 +49,13 @@ function(nc)
     }
   nlat <- length(lat)
   lon <- as.vector(ncf$dim$lon$vals)
+  if (any(lon > 180))
+    lon <- lon - 360
   nlon <- length(lon)
   depth <- as.vector(ncf$dim$depth$vals)
-
+  if (is.null(depth))
+    depth <- 0
+    
   # determine spatial resolution
   spatRes <- round(distGeo(p1=c(lon[1], lat[1]), p2=c(lon[1], lat[2]))/1000, digits=1)
   spatRes <- paste(spatRes, "km")
