@@ -24,12 +24,12 @@ function(nc)
     or <- chut[3]
   
   np <- length(ti)
-  tmStart <- as.POSIXct(ti, tz="UTC", format="%Y-%m-%d", origin=or)
+  tmStart <- as.POSIXct(ti, tz = "UTC", format = "%Y-%m-%d", origin = or)
   avps <- list(tmStart = tmStart, tmEnd = tmStart)
   
   # determine temporal range
   if ( np > 1){
-    dt <- as.numeric(difftime(tmStart[2], tmStart[1], units="days"))
+    dt <- as.numeric(difftime(tmStart[2], tmStart[1], units = "days"))
     if(dt > 27){
       tempRng <- "monthly"
     } else {

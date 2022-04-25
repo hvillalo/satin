@@ -40,15 +40,15 @@ read.ghrsst <-
         stop(paste("type of variable is different in at least one nc file:", vname, vn))
       
       # time coverage	
-      tst <- ncatt_get( ncf, varid=0)$time_coverage_start
-      ten <- ncatt_get( ncf, varid=0)$time_coverage_end
-        tst <- as.POSIXct(tst, format="%Y%m%dT%H%M%S", tz="UTC")
-        ten <- as.POSIXct(ten, format="%Y%m%dT%H%M%S", tz="UTC")
+      tst <- ncatt_get(ncf, varid = 0)$time_coverage_start
+      ten <- ncatt_get(ncf, varid = 0)$time_coverage_end
+        tst <- as.POSIXct(tst, format = "%Y%m%dT%H%M%S", tz = "UTC")
+        ten <- as.POSIXct(ten, format = "%Y%m%dT%H%M%S", tz = "UTC")
       tmStart[h] <- tst
       tmEnd[h] <- ten	  
       
       # read data
-      data <- ncvar_get(ncf, varid=vn, start = st, count = cnt)
+      data <- ncvar_get(ncf, varid = vn, start = st, count = cnt)
       data <- t(data)
       # read mask:  1=open-sea; 2=land; 3=coast/shore; 5=open-lake; 9=open-sea with ice in the grid;
       # 11=coast/shore with ice in the grid; 13=open-lake with ice in the grid
@@ -60,8 +60,8 @@ read.ghrsst <-
       nc_close(ncf)
       D[ , , h] <- aoi
     }  
-    avps <- list(tmStart = as.POSIXct(tmStart, origin = "1970-01-01", tz="UTC"), 
-                 tmEnd = as.POSIXct(tmEnd, origin = "1970-01-01", tz="UTC"))
+    avps <- list(tmStart = as.POSIXct(tmStart, origin = "1970-01-01", tz = "UTC"), 
+                 tmEnd = as.POSIXct(tmEnd, origin = "1970-01-01", tz = "UTC"))
 		
     ans <- satin(lon = longit, lat = latit, data = D, 
                attribs = list(title = vtitle, longname = vlongname, name = vname, 
