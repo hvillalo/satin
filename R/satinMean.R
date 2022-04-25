@@ -5,8 +5,7 @@ function(X, by = "%m", depth = NULL)
     stop ("need object of class 'satin'")
   # Implemented averaging periods in "by". This includes two non-standard 
   # conversion specifications and their combinations with year: 
-  # "%qtr", and "%sem", for quarter and semester, respectively, which
-  # are passed to lubridate's functions of the same names. 
+  # "%qtr", and "%sem", for quarter and semester, respectively. 
   iby <- c("%Y", "%m", "%Y-%m", "%j", "%qtr", "%Y-%qtr", "%sem", "%Y-%sem",
            "%U", "%V", "%W", "%Y-%U", "%Y-%V", "%Y-%W")
   tr <- c("yearly", rep("monthly", 2), "dayly", rep("quarterly", 2),
@@ -32,14 +31,22 @@ function(X, by = "%m", depth = NULL)
   if (by %in%  iby[-c(5:8)])
     idx <- format(tv, by)
   if (by == "%qtr")
-    idx <- quarter(tv)
-  if (by == "%Y-%qtr")
-    idx <- quarter(tv, with_year = TRUE)
-  if (by == "%sem")
-    idx <- semester(tv)
-  if (by == "%Y-%sem")
-    idx <- semester(tv, with_year = TRUE)
-  
+    idx <- quarters(tv)
+  if (by == "%Y-%qtr"){
+    q <- quarters(tv)
+    y <- format(tv, "%Y")
+    idx <- paste(y, q, sep = "-")
+  }  
+  if (by == "%sem"){
+    m <- as.numeric(format(tv, "%m"))
+    idx <- ifelse(m <= 6, "S1", "S2")
+  }  
+  if (by == "%Y-%sem"){
+    m <- as.numeric(format(tv, "%m"))
+    s <- ifelse(m <= 6, "S1", "S2")
+    y <- format(tv, "%Y")
+    idx <- paste(y, s, sep = "-")
+  }
   uidx <- unique(idx)
   nidx <- length(uidx)
   tmS <- tmE <- numeric(nidx)
@@ -50,13 +57,12 @@ function(X, by = "%m", depth = NULL)
     suidx <- unlist(strsplit(uidx, split="-"))  
     suidx <- suidx[seq(2, length(suidx), 2)]
   }  
-  if (ssp == '.')
-    suidx <- paste("0", round((uidx - trunc(uidx)) * 10), sep="")
   if (ssp == ""){
     suidx <- uidx
     if (inherits(suidx, 'integer'))
       suidx <- paste("0", suidx, sep="")
   }  
+  
   lab <- paste(substr(tr[which(iby == by)], 1, 1), suidx, sep="-")
   
   for (k in 1:nidx) tmS[k] <- min(tvs[idx == uidx[k]])
