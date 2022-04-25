@@ -17,13 +17,18 @@ function(u, v, depth = 1)
   # velocity matrices for chosen depth
   u <- u@data[ , , , depth]
   v <- v@data[ , , , depth]
-
+  if (dims[3] == 1){
+    dim(u) <- c(dim(u), 1)
+    dim(v) <- c(dim(v), 1)
+  }
+  
   # speed calculation
   speed <- sqrt(u^2 + v^2)
   
   # destination coordinates: xo + u; yo + v
   xd <- sweep(x = u, MARGIN = c(1, 2), STATS = xo, FUN = "+")
   yd <- sweep(v, c(1, 2), yo, FUN = "+")
+
   
   # direction (rhumb)
   origin <- cbind(as.vector(xo), as.vector(yo))
