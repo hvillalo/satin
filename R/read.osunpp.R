@@ -4,8 +4,8 @@ function(h5, lons, lats)
   ni <- length(h5)
   tmStart <- tmEnd <- numeric(ni)
  
-  # open h5 file
-  ncf <- nc_open(h5)
+  # open first h5 file
+  ncf <- nc_open(h5[1])
   
   # get attributes 
   vname <- names(ncf$var)[1]
