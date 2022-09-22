@@ -66,7 +66,7 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   if (xaxt == "s"){
    if (missing(atx)){
     px <- par("xaxp")
-	atx <- seq(px[1], px[2], len=px[3]+1) 
+	atx <- seq(px[1], px[2], len=3) 
    }
    sp::degAxis(1, at = atx)
   } 

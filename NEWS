@@ -1,3 +1,6 @@
+Changes to Version 1.1.0
+ o New argument (restore.par = FALSE) added to plot.satin() allowing to annotate plots, e.g. add isolines.
+
 Changes to Version 1.0.3
 
  o velocity(), a new function for calculating current speed and direction have been added. 
