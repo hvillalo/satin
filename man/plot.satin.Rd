@@ -12,7 +12,8 @@ Visual representation of ocean data from satellite images (MODIS, AVHRR, etc.) o
 \method{plot}{satin}(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
            map = NULL, map.col = "grey", map.outline = "black", scheme = "default",
            col.sep = 0.1, colbar = TRUE, main = NULL, main.pos = "topright",
-           log = FALSE, units = NULL,  xaxt = "s", yaxt = "s", atx = NULL, aty = NULL,...)
+           log = FALSE, units = NULL,  xaxt = "s", yaxt = "s", atx = NULL, aty = NULL,
+		   restore.par = TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -34,10 +35,11 @@ Visual representation of ocean data from satellite images (MODIS, AVHRR, etc.) o
   \item{units}{ color bar label, defaults to \code{units} in \code{x}. }
   \item{xaxt, yaxt}{ "n" to supress axis. }
   \item{atx, aty}{ specify tick-mark locations for fine tuning axes annotations. }
+  \item{restore.par}{ logical. If \code{TRUE} (the default), the graphical device is restored to its original state. }  
   \item{\dots}{ further arguments to pass to \code{\link{plot}}. }
 }
 \details{
-The only mandatory argument for this function to produce a map is an object of class "satin" (\code{x} in this case).  All the other arguments are optional and can be used to customize the plot.  For chlorophyll concentration data, when \code{log = TRUE}, the color scale is fixed to a maximum value of 20, which implies that values above it are set to this maximum before applying logarithms.
+The only mandatory argument for this function to produce a map is an object of class "satin" (\code{x} in this case).  All the other arguments are optional and can be used to customize the plot.  For chlorophyll concentration data, when \code{log = TRUE}, the color scale is fixed to a maximum value of 20, which implies that values above it are set to this maximum before applying logarithms. Using \code{restore.par = FALSE} to annotate plot, e.g. add isolines.
 }
 \value{
  A plot including a map, of the corresponding parameter is produced.

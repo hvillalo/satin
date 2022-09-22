@@ -15,7 +15,7 @@ This intermediate resolution map was imported from the Global Self-consistent, H
 \references{
 Wessel, P. and Smith, W. H. F. 1996 A Global Self-consistent, Hierarchical, High-resolution Shoreline Database, \emph{Journal of Geophysical Research}, \bold{101}, 8741--8743.
 }
-\seealso{ \code{\link{Rgshhs}} }
+\seealso{ \code{Rgshhs} }
 \examples{
 library(sp)
 data(dmap)
