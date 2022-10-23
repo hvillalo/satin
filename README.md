@@ -2,6 +2,7 @@
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/satin)](https://cran.r-project.org/package=satin)
 [![](https://cranlogs.r-pkg.org/badges/satin)](https://cran.r-project.org/package=satin)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/satin)](https://cran.r-project.org/package=satin) 
 
 Visualisation and Analysis of Ocean Data Derived from Satellites
 
