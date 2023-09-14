@@ -7,7 +7,7 @@ function(X, by = "%m", depth = NULL)
   # conversion specifications and their combinations with year: 
   # "%qtr", and "%sem", for quarter and semester, respectively. 
   iby <- c("%Y", "%m", "%Y-%m", "%j", "%qtr", "%Y-%qtr", "%sem", "%Y-%sem",
-           "%U", "%V", "%W", "%Y-%U", "%Y-%V", "%Y-%W")
+           "%U", "%V", "%W", "%Y-%U", "%G-%V", "%Y-%W")
   tr <- c("yearly", rep("monthly", 2), "dayly", rep("quarterly", 2),
              rep("semesterly", 2), rep("weekly", 6))
   if (!by %in% iby )
