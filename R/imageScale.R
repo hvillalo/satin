@@ -38,7 +38,7 @@ function(z, zlim, col = heat.colors(12), breaks, axis.pos = 1,
   if(add.axis & log == FALSE) {axis(axis.pos, las = 1, ...)}
   if(add.axis & log == TRUE) {
     labs <- c(0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20)
-    atp <- log(labs)
+    atp <- log10(labs)
     axis(axis.pos, las = 1, at = atp, labels = labs, ...)
   }
 }

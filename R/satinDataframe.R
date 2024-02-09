@@ -17,8 +17,8 @@ function(X, reverse = FALSE)
       ni <- np
       nd <- 1
     }  
-    Z <- array(z, dim = c(ny * nx, ni))
-    ans <- data.frame(x = vlon, y = vlat, Z)
+    dim(z) <- c(ny * nx, ni)
+    ans <- data.frame(x = vlon, y = vlat, z)
     names(ans)[3:(ni+2)] <- paste("p", 1:ni, sep = "")
     attribs <-  X@attribs
     attribs$period <- X@period

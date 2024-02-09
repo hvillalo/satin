@@ -33,7 +33,7 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   if ( log == TRUE ){
      z[z > 20] <- 20
      z <- log10(z)
-     zlim <- log(c(0.01, 20))
+     zlim <- log10(c(0.01, 20))
   }
   
   cb <- satinPalette(zmin = zlim[1], zmax = zlim[2], col.sep = col.sep, scheme = scheme)
