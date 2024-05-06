@@ -60,7 +60,7 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
    map("world", xlim = pu[1:2], ylim = pu[3:4], add = TRUE)
   } else {
    plot(map, xlim = pu[1:2], ylim = pu[3:4], xaxs = "i", yaxs = "i", 
-        axes = FALSE, lty = 1, col = map.col, border = map.outline, add = TRUE)
+        axes = FALSE, lty = 1, col = map.col, border = map.outline, add = TRUE, ...)
   }
   box() 
   if (xaxt == "s"){
