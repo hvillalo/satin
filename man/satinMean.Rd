@@ -8,7 +8,7 @@ Averaging ocean data by time period
 This function allows to average ocean data by a selected time period.  For example, from daily data, the user may want to obtain weekly, monthly, quarterly or even yearly averages. 
 }
 \usage{
-satinMean(X, by = "\%m", depth = NULL)
+satinMean(X, by = "\%m", depth = NULL, FUN = "mean")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +20,8 @@ satinMean(X, by = "\%m", depth = NULL)
 }
   \item{depth}{
  an integer referring to a given  depth level (defaults to 1). Only meaningful for Copernicus data that includes variables at different depths.
+}
+  \item{FUN}{allows to calculate an statistic other than the mean, e.g. standard deviation (\code{FUN = "sd"}).
 }
 }
 \details{

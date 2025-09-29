@@ -1,5 +1,5 @@
 satinMean <-
-function(X, by = "%m", depth = NULL) 
+function(X, by = "%m", depth = NULL, FUN = "mean") 
 {
   if (!inherits(X, "satin"))
     stop ("need object of class 'satin'")
@@ -74,7 +74,7 @@ function(X, by = "%m", depth = NULL)
    x <- z[, , idx == uidx[k]]
    sumpix <- apply(!is.na(x), MARGIN=c(1, 2), "sum")
    coverage <- sumpix/dim(x)[3]
-   satM[, , k] <- apply(x, MARGIN=c(1, 2), "mean", na.rm=TRUE)
+   satM[, , k] <- apply(x, MARGIN=c(1, 2), FUN, na.rm=TRUE)
    satM[, , k][coverage == 0] <- NA
   }
   

@@ -1,5 +1,5 @@
 read.cmems <-
-function(nc) 
+function(nc, var = NULL) 
 {
   if (length(nc) > 1)
     stop("this function expects only one Copernicus nc file")
@@ -66,7 +66,9 @@ function(nc)
   ans <- list()  
   
   # process variables and depths in nc file
-  for (k in 1:nv) {
+  if (missing(var))
+    var <- 1:nv
+  for (k in var) {
    nd <- length(depth)
    vn <- vars[k]
    VAo <- ncvar_get(ncf, vn)

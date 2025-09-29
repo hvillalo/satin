@@ -22,11 +22,11 @@ Polyline coordinates of desired isolines are calculated via \code{contourLines} 
 \value{
 A list with two data frames of class \code{"PolySet"} and \code{"PolyData"}. See \code{help(PolySet)} and \code{help(PolyData)} for a complete description.
 }
-\author{ Héctor Villalobos, from code in examples of \pkg{PBSMapping} package}
+\author{ Héctor Villalobos, from code in examples of \pkg{PBSmapping} package}
 \references{
 Schnute, J. T., Boers, N. M., Haigh, R. and Couture-Beil, A. 2011 PBS Mapping 2.62: user's guide revised from Canadian Technical Report of Fisheries and Aquatic Sciences 2549:vi + 112 p. Last updated Feb 29, 2011.
 }
-\seealso{ \code{\link{contourLines}}, \code{\link{convCP}}, \code{\link{PolySet}} }
+\seealso{ \code{\link{contourLines}}, \code{\link[PBSmapping]{convCP}}, \code{\link[PBSmapping]{PolySet}} }
 \examples{
 library(PBSmapping)
 data(dsst)

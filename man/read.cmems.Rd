@@ -8,11 +8,12 @@ Read ocean products data from CMEMS
 Read data from netCDF files downloaded from Copernicus Marine Service (CMEMS).
 }
 \usage{
-read.cmems(nc)
+read.cmems(nc, var = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{nc}{ name of the netCDF file to be read.}
+  \item{var}{ name of the variable to read.}
 }
 \details{
 The function can read data from netCDF files downloaded from CMEMS web page (\url{ https://marine.copernicus.eu/ }).  It has been tested with Global Ocean Physical Reanalysis, and Global Ocean Biogeochemistry Hindcast databases.  When downloading Copernicus data files, the user can select one or several variables (see references below), depth levels, daily or monthly means, time and spatial coverage.  This makes every Copernicus netCDF file unique.  The \code{read.cmems} function attempts to read all the variables and depth levels at once.  When only one variable is included in the file, a \code{"satin"} object with one additional dimension in the data array to accommodate the different depth levels, is produced.  On the other hand, when several variables are present, the function returns a named list, with every element being a \code{"satin"} object corresponding to each variable. 

@@ -36,7 +36,7 @@ When \code{return.poly = TRUE}, a list with two components:
  Héctor Villalobos
 }
 \seealso{
- \code{\link{getpoly}} 
+ \code{\link[splancs]{getpoly}} 
 }
 \examples{
 # load and display sample data

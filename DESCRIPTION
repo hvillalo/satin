@@ -1,8 +1,8 @@
 Package: satin
 Type: Package
 Title: Visualisation and Analysis of Ocean Data Derived from Satellites
-Version: 1.1.0
-Date: 2022-09-22
+Version: 1.2.0
+Date: 2025-09-29
 Encoding: UTF-8
 Author: Héctor Villalobos and Eduardo González-Rodríguez <egonzale@cicese.mx>
 Maintainer: Héctor Villalobos <hvillalo@ipn.mx>
@@ -14,7 +14,7 @@ BugReports: https://github.com/hvillalo/satin/issues
 Collate: satin-class.R read.cmems.R read.ghrsst.R read.nasaoc.R read.osunpp.R
          fmainPos.R imageScale.R plot.satin.R satinPalette.R quiver.R
          verticalProfiles.R satinDataframe.R pixelate.R climatology.R crop.R
-         extractPts.R isolines.R satinMean.R anomaly.R velocity.R
+         extractPts.R isolines.R satinMean.R anomaly.R velocity.R name_ncvars.R
 Imports:
   ncdf4,
   maps,
@@ -25,3 +25,4 @@ Imports:
   geosphere,
   graphics,
   methods
+RoxygenNote: 7.3.2

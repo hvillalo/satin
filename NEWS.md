@@ -1,3 +1,7 @@
+# Changes to Version 1.2.0
+* Added missing package anchors in Rd files.
+* New argument, Pacific.centric = TRUE, in plot.satin() allows for maps centered in the Pacific.
+
 # Changes to Version 1.1.0
 * New argument (restore.par = FALSE) added to plot.satin() allowing to annotate plots, e.g. add isolines.
  
@@ -15,3 +19,5 @@
 
 * Fixed read.osunpp() function that was unable to import monthly datasets due to different names found in h5 files ('Start Time String_GLOSDS' in 8-day files, 'Start Time String' in monthly files).
  
+ 
+ @

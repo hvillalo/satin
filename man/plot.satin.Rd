@@ -10,10 +10,10 @@ Visual representation of ocean data from satellite images (MODIS, AVHRR, etc.) o
 }
 \usage{
 \method{plot}{satin}(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
-           map = NULL, map.col = "grey", map.outline = "black", scheme = "default",
-           col.sep = 0.1, colbar = TRUE, main = NULL, main.pos = "topright",
-           log = FALSE, units = NULL,  xaxt = "s", yaxt = "s", atx = NULL, aty = NULL,
-		   restore.par = TRUE, ...)
+           map = NULL, Pacific.centric = FALSE, map.col = "grey", map.outline = "black",
+           scheme = "default", col.sep = 0.1, colbar = TRUE, main = NULL,
+           main.pos = "topright", log = FALSE, units = NULL,  xaxt = "s", yaxt = "s",
+		   atx = NULL, aty = NULL, restore.par = TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,6 +24,7 @@ Visual representation of ocean data from satellite images (MODIS, AVHRR, etc.) o
   \item{ylim}{ minimum and maximum latitude values for the map. }
   \item{zlim }{ minimum and maximum ocean data  values. }
   \item{map}{ a user defined map of class "SpatialPolygons". }
+  \item{Pacific.centric}{ logical. When \code{TRUE}, maps are centered in the Pacific. }
   \item{map.col}{ color for the map. }
   \item{map.outline}{ color for the map outline. }
   \item{scheme}{ color scheme for the ocean data, either: "default" or a vector of valid color names.}

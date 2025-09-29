@@ -1,9 +1,9 @@
 plot.satin <-
 function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL, 
-        map = NULL, map.col = "grey", map.outline = "black", scheme = "default", 
-        col.sep = 0.1, colbar = TRUE, main = NULL, main.pos = "topright", 
-        log = FALSE, units = NULL, xaxt = "s", yaxt = "s", atx = NULL, 
-        aty = NULL, restore.par = TRUE, ...)
+        map = NULL, Pacific.centric = FALSE, map.col = "grey", map.outline = "black", 
+        scheme = "default", col.sep = 0.1, colbar = TRUE, main = NULL, 
+        main.pos = "topright", log = FALSE, units = NULL, xaxt = "s", yaxt = "s",
+        atx = NULL, aty = NULL, restore.par = TRUE, ...)
 {
   X <- x
   x <- X@lon
@@ -56,8 +56,13 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   image(x, y, t(z), xlim = xli, ylim = yli, zlim, asp = 1, xlab = "", ylab = "",
       col = cbp, breaks = cbb, xaxt = "n", yaxt = "n")
   pu <- par("usr")
-  if ( missing(map) ) {  
-   map("world", xlim = pu[1:2], ylim = pu[3:4], add = TRUE)
+  if (missing(map)) {  
+    if (Pacific.centric == TRUE){
+      mapdb <- "world2"
+    } else {
+      mapdb <- "world"
+    }
+   map(mapdb, xlim = pu[1:2], ylim = pu[3:4], add = TRUE)
   } else {
    plot(map, xlim = pu[1:2], ylim = pu[3:4], xaxs = "i", yaxs = "i", 
         axes = FALSE, lty = 1, col = map.col, border = map.outline, add = TRUE, ...)
@@ -66,14 +71,14 @@ function(x, period = 1, depth = 1, xlim = NULL, ylim = NULL, zlim = NULL,
   if (xaxt == "s"){
    if (missing(atx)){
     px <- par("xaxp")
-	atx <- seq(px[1], px[2], len=3) 
+    atx <- seq(px[1], px[2], len=3) 
    }
    sp::degAxis(1, at = atx)
   } 
   if (yaxt == "s"){
    if (missing(aty)){
     py <- par("yaxp")
-	aty <- seq(py[1], py[2], len=py[3]+1)
+    aty <- seq(py[1], py[2], len=py[3]+1)
    }
    sp::degAxis(2, at = aty, las = 1)
   } 
