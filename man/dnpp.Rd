@@ -28,10 +28,10 @@ Formal class 'satin' [package "satin"] with 6 slots
   }
 }
 \details{
-Source data file (vgpm.2013089.hdf.gz) was downloaded from the link below, decompressed with \code{gunzip} function from \pkg{R.utils} package, then converted to hdf v5 with h4toh5 Conversion Software (\url{ https://support.hdfgroup.org/products/hdf5_tools/h4toh5/download.html }) before being imported with the \code{\link{read.osunpp}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
+Source data file (vgpm.2013089.hdf.gz) was downloaded from the link below, decompressed with \code{gunzip} function from \pkg{R.utils} package, then converted to hdf v5 with h4toh5 Conversion Software (\url{ https://support.hdfgroup.org/downloads/h4h5tools/h4h5tools_2_2_5.html }) before being imported with the \code{\link{read.osunpp}} function.  The selected area covers from 20 to 35 degrees of latitude North and from 119 to 104 degrees of longitude West.
 }
 \source{
-  \url{ http://sites.science.oregonstate.edu/ocean.productivity/standard.product.php }
+As of September 29, 2025, the Ocean Productivity site (https://orca.science.oregonstate.edu/npp_products.php) is operating with an expired security certificate, and its data has not been updated since February 2024. Despite this, the archived data remains accessible and usable.
 }
 \references{
 Behrenfeld, M. J. and Falkowski, P. G. 1997 Photosynthetic rates derived from satellite-based chlorophyll concentration, \emph{Limnology and Oceanography}, \bold{42}, 1--20.

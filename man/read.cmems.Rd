@@ -23,7 +23,7 @@ The function can read data from netCDF files downloaded from CMEMS web page (\ur
 A named list, with elements corresponding to each variable included in the netCDF file.  Each list element (or when only one variable is present) is an object of class \code{"satin"}. See \code{\link{satin-class}} for details.
 }
 \references{
-\url{ https://resources.marine.copernicus.eu/?option=com_csw&task=results }
+\url{ https://data.marine.copernicus.eu/products?option=com_csw&task=results }
 
 Fernandez, E. and Lellouche, J. M. 2018 Product User Manual for the Global Ocean Physical Reanalysis product, issue 1.1. EU Copernicus Marine Service.
   

@@ -1,4 +1,5 @@
 Version: 1.0
+ProjectId: 8ad928f0-cf92-4663-9b0e-abcf4cb7472e
 
 RestoreWorkspace: Default
 SaveWorkspace: Default
@@ -16,4 +17,5 @@ BuildType: Package
 PackageUseDevtools: Yes
 PackageInstallArgs: --no-multiarch --with-keep.source
 PackageBuildArgs: --resave-data
+PackageBuildBinaryArgs: --as-cran
 PackageCheckArgs: --as-cran

@@ -17,7 +17,7 @@ read.ghrsst(nc, lons, lats)
   \item{lats}{ a vector with southern- and northern-most  latitudes. }
 }
 \details{
-This function can read SST data from one or multiple netCDF files downloaded from Caltech Jet Propulsion Laboratory web page (\url{ https://podaac-opendap.jpl.nasa.gov/opendap/allData/ghrsst/data/GDS2/L4/GLOB/JPL/MUR/v4.1/ }).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively. 
+This function can read SST data from one or multiple netCDF files downloaded from Caltech Jet Propulsion Laboratory web page (\url{ https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1 }).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively. 
 }
 \value{
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.

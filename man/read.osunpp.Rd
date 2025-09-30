@@ -17,7 +17,7 @@ read.osunpp(h5, lons, lats)
   \item{lats}{ a vector with southern- and northern-most  latitudes. }
 }
 \details{
-This function reads Oregon State University ocean productivity data files (\url{http://sites.science.oregonstate.edu/ocean.productivity/standard.product.php}).  However, downloaded files should be first converted from hdf version 4 to version 5 with h4h5tools (\url{https://portal.hdfgroup.org/display/support/Download+h4h5tools}).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively.  
+This function reads Oregon State University ocean productivity data files (see \code{\link{dnpp}}).  However, downloaded files should be first converted from hdf version 4 to version 5 with h4h5tools (\url{https://support.hdfgroup.org/downloads/h4h5tools/h4h5tools_2_2_5.html}).  The user must specify the minimum and maximum latitude and longitude limits within the interval (-90,  90) and (-180, 180) respectively.  
 }
 \value{
  An object of class \code{"satin"}. See \code{\link{satin-class}} for details.
