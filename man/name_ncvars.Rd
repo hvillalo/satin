@@ -11,7 +11,7 @@ name_ncvars(nc)
 }
 \value{
 This function only displays the number of variables, their names,
-and corresponding long names.
+and long names.
 }
 \description{
 This function returns names and long names of the variables in a netCDF file.

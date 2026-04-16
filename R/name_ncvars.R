@@ -8,7 +8,7 @@
 #' contained in a netCDF file before importing the data.
 #' 
 #' @return This function only displays the number of variables, their names,
-#' and corresponding long names.
+#' and long names.
 #'
 #' @author Héctor Villalobos.   
 #'
